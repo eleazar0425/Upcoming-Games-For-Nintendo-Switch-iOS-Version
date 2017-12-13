@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwh-0h-VZ0">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="k22-jn-lVN">
+            <objects>
+                <navigationController id="Iwh-0h-VZ0" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4LC-nj-ioU">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9C9-RB-W03" kind="relationship" relationship="rootViewController" id="aI8-ze-B9a"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PI4-i1-BpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1036" y="95"/>
+        </scene>
+        <!--Upcoming games-->
+        <scene sceneID="GdY-Mr-BHU">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9C9-RB-W03" customClass="GamesViewController" customModule="Upcoming_Games" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qdI-MT-GrT"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tlj-KN-yd4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1E9-w2-bck">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ot6-dU-AQV">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCellIdentifier" rowHeight="165" id="Ijn-O0-2EI" customClass="GameTableViewCell" customModule="Upcoming_Games" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="165"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ijn-O0-2EI" id="dxg-h2-PM0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mk4-aJ-3Dp">
+                                                    <rect key="frame" x="155" y="0.0" width="212" height="46"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="46" id="Vbd-gt-pFk"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Name">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="Roboto-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZP-M5-lCL">
+                                                    <rect key="frame" x="155" y="64" width="204" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="5Lj-Fg-VDN"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Players: 2 simultaneous">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3gk-Cs-7dY">
+                                                    <rect key="frame" x="333" y="143" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$0.0">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bze-Bc-fpr">
+                                                    <rect key="frame" x="155" y="82" width="204" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="D9j-KV-ehQ"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Release on: 0000">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTm-AD-Hyn">
+                                                    <rect key="frame" x="155" y="102" width="204" height="14"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Physical release: yes">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6X-SR-mVW">
+                                                    <rect key="frame" x="155" y="46" width="204" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="CTo-gQ-6zF"/>
+                                                    </constraints>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Already Released">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZMH-zQ-xeE">
+                                                    <rect key="frame" x="155" y="124" width="40" height="40"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="toggleFavoriteAction:" destination="Ijn-O0-2EI" eventType="touchUpInside" id="TeH-mr-AhD"/>
+                                                    </connections>
+                                                </button>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-wE-pbW">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="164"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="147" id="mfi-dM-kky"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XZP-M5-lCL" secondAttribute="trailing" constant="8" id="2Ga-mM-ikK"/>
+                                                <constraint firstItem="Mk4-aJ-3Dp" firstAttribute="top" secondItem="dxg-h2-PM0" secondAttribute="top" id="3kb-UE-vdw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Bze-Bc-fpr" secondAttribute="trailing" constant="8" id="7uN-dF-zF0"/>
+                                                <constraint firstItem="XZP-M5-lCL" firstAttribute="top" secondItem="d6X-SR-mVW" secondAttribute="bottom" constant="4" id="88a-tU-4tx"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="d6X-SR-mVW" secondAttribute="trailing" constant="8" id="GUS-eh-1G1"/>
+                                                <constraint firstItem="2Bf-wE-pbW" firstAttribute="leading" secondItem="dxg-h2-PM0" secondAttribute="leading" id="S1s-bE-NXv"/>
+                                                <constraint firstItem="Bze-Bc-fpr" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="VEW-tU-yWV"/>
+                                                <constraint firstItem="Mk4-aJ-3Dp" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="Wat-7r-obk"/>
+                                                <constraint firstItem="TTm-AD-Hyn" firstAttribute="top" secondItem="Bze-Bc-fpr" secondAttribute="bottom" constant="6" id="WsO-jn-sRp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="TTm-AD-Hyn" secondAttribute="trailing" constant="8" id="YLY-Wg-ave"/>
+                                                <constraint firstItem="d6X-SR-mVW" firstAttribute="top" secondItem="Mk4-aJ-3Dp" secondAttribute="bottom" id="dxw-mu-X2l"/>
+                                                <constraint firstItem="2Bf-wE-pbW" firstAttribute="top" secondItem="dxg-h2-PM0" secondAttribute="top" id="hhg-gA-nZz"/>
+                                                <constraint firstAttribute="bottom" secondItem="2Bf-wE-pbW" secondAttribute="bottom" id="jLi-DM-OqS"/>
+                                                <constraint firstAttribute="trailing" secondItem="Mk4-aJ-3Dp" secondAttribute="trailing" constant="8" id="tSu-zJ-Xfx"/>
+                                                <constraint firstItem="XZP-M5-lCL" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="uPt-SE-SPn"/>
+                                                <constraint firstItem="d6X-SR-mVW" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="w4Y-gc-YLT"/>
+                                                <constraint firstItem="Bze-Bc-fpr" firstAttribute="top" secondItem="XZP-M5-lCL" secondAttribute="bottom" constant="4" id="ynF-Fs-V7t"/>
+                                                <constraint firstItem="TTm-AD-Hyn" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="zqc-au-dmN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="boxArt" destination="2Bf-wE-pbW" id="ufM-UN-tjw"/>
+                                            <outlet property="daysToRelease" destination="d6X-SR-mVW" id="vIu-N8-1Rz"/>
+                                            <outlet property="favoriteToggle" destination="ZMH-zQ-xeE" id="cfx-Sg-fZh"/>
+                                            <outlet property="noOfPlayers" destination="XZP-M5-lCL" id="7qi-75-Y2v"/>
+                                            <outlet property="physicalRelease" destination="TTm-AD-Hyn" id="kgm-zL-cvb"/>
+                                            <outlet property="price" destination="3gk-Cs-7dY" id="NX9-rP-t2f"/>
+                                            <outlet property="releaseOn" destination="Bze-Bc-fpr" id="OCd-d7-AVZ"/>
+                                            <outlet property="title" destination="Mk4-aJ-3Dp" id="tkm-wm-FLG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Upcoming games" id="lxd-1Z-bh9">
+                        <barButtonItem key="leftBarButtonItem" image="AboutIcon" style="plain" id="lDg-Rk-MTy">
+                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="a95-nR-Bwu" kind="show" identifier="searchSegue" id="zdT-z1-pHC"/>
+                            </connections>
+                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem image="filterIcon" id="FdK-8X-xKN">
+                                <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="filterAction:" destination="9C9-RB-W03" id="0M0-sD-tYw"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="sortIcon" id="9pF-W1-mY9">
+                                <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="sortAction:" destination="9C9-RB-W03" id="MaA-ab-yLh"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Ot6-dU-AQV" id="8u7-MD-TeA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="64l-1L-IfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-66.400000000000006" y="94.902548725637189"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="Qt0-bh-bCS">
+            <objects>
+                <viewController id="a95-nR-Bwu" customClass="SearchViewController" customModule="Upcoming_Games" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="743-LN-Hr5"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Bv-oe-tQg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3kb-w3-gEU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVp-Nq-5NR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="a95-nR-Bwu" id="rA0-JJ-Eaq"/>
+                                </connections>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmU-UO-Zec">
+                                <rect key="frame" x="0.0" y="108" width="375" height="559"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="GameCellIdentifier" rowHeight="165" id="fQe-Hm-JIo" customClass="GameTableViewCell" customModule="Upcoming_Games" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="165"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fQe-Hm-JIo" id="GeA-6T-XXv">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="164.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-ml-eEu">
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="164"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ib5-Bu-egx">
+                                                    <rect key="frame" x="155" y="0.0" width="212" height="46"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Name">
+                                                            <attributes>
+                                                                <font key="NSFont" size="14" name="Roboto-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5y-Ju-sRx">
+                                                    <rect key="frame" x="199" y="62" width="128" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Players: 2 simultaneous">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66f-C3-wEB">
+                                                    <rect key="frame" x="333" y="143" width="42" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$0.0">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="40Y-K7-783">
+                                                    <rect key="frame" x="218" y="81" width="93" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Release on: 0000">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kb1-f4-bvi">
+                                                    <rect key="frame" x="208" y="102" width="112" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Physical release: yes">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV6-be-xV3">
+                                                    <rect key="frame" x="216" y="42" width="94" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="Already Released">
+                                                            <attributes>
+                                                                <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="boxArt" destination="wWI-ml-eEu" id="sgk-7F-cFQ"/>
+                                            <outlet property="daysToRelease" destination="eV6-be-xV3" id="QUp-bu-4A1"/>
+                                            <outlet property="noOfPlayers" destination="X5y-Ju-sRx" id="CuL-Ix-XNK"/>
+                                            <outlet property="physicalRelease" destination="kb1-f4-bvi" id="vAd-58-jWj"/>
+                                            <outlet property="price" destination="66f-C3-wEB" id="EKC-iW-gsF"/>
+                                            <outlet property="releaseOn" destination="40Y-K7-783" id="jIy-4D-1gF"/>
+                                            <outlet property="title" destination="Ib5-Bu-egx" id="aDw-Zi-2X6"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="gVp-Nq-5NR" id="TSn-kF-Omh"/>
+                        <outlet property="tableView" destination="cmU-UO-Zec" id="ldD-9I-QD9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vOR-01-bWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="757.60000000000002" y="94.902548725637189"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="AboutIcon" width="27" height="27"/>
+        <image name="filterIcon" width="27" height="27"/>
+        <image name="sortIcon" width="24" height="24"/>
+    </resources>
+</document>
