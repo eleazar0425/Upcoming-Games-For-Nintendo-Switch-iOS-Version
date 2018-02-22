@@ -86,7 +86,7 @@
 				20A1448C1F19125B005CCDC7 /* GameTableViewCell.swift */,
 				202D9E2A1F1D562E00B1E06E /* GameListContract.swift */,
 			);
-			name = GameListing;
+			path = GameListing;
 			sourceTree = "<group>";
 		};
 		202D9E2E1F20DF7100B1E06E /* Util */ = {
@@ -95,7 +95,7 @@
 				202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */,
 				20698CCF1F4DCFC9006C6A6A /* FavoriteUtil.swift */,
 			);
-			name = Util;
+			path = Util;
 			sourceTree = "<group>";
 		};
 		2099466B1F4B3570001F5FA4 /* Search */ = {
@@ -103,7 +103,7 @@
 			children = (
 				2099466C1F4B357F001F5FA4 /* SearchContract.swift */,
 			);
-			name = Search;
+			path = Search;
 			sourceTree = "<group>";
 		};
 		20A1446A1F190D6F005CCDC7 = {
@@ -151,7 +151,7 @@
 				2099466B1F4B3570001F5FA4 /* Search */,
 				202D9E291F1D561800B1E06E /* GameListing */,
 			);
-			name = View;
+			path = View;
 			sourceTree = "<group>";
 		};
 		20A1448E1F191829005CCDC7 /* Controller */ = {
@@ -160,7 +160,7 @@
 				20A144961F1947E7005CCDC7 /* GamesViewController.swift */,
 				209946691F4B3372001F5FA4 /* SearchViewController.swift */,
 			);
-			name = Controller;
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		20A144911F1918BB005CCDC7 /* Model */ = {
@@ -171,7 +171,7 @@
 				202D9E331F2A796C00B1E06E /* FilterBy.swift */,
 				20698CCD1F4DCDB3006C6A6A /* Favorite.swift */,
 			);
-			name = Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		20A1449B1F1CE6D4005CCDC7 /* Extensions */ = {
@@ -179,7 +179,7 @@
 			children = (
 				20A1449C1F1CE6FA005CCDC7 /* UIImageView+AlamofireImage.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		20A1449E1F1CE8AC005CCDC7 /* Net */ = {
@@ -190,7 +190,7 @@
 				20A144A11F1CE8EB005CCDC7 /* ServiceError.swift */,
 				20A144A51F1CE9AA005CCDC7 /* APIClient.swift */,
 			);
-			name = Net;
+			path = Net;
 			sourceTree = "<group>";
 		};
 		20A144A71F1CEBA1005CCDC7 /* Routers */ = {
@@ -199,7 +199,7 @@
 				20A144991F1CE164005CCDC7 /* Reachability.swift */,
 				20A144A81F1CEBB4005CCDC7 /* GameRouter.swift */,
 			);
-			name = Routers;
+			path = Routers;
 			sourceTree = "<group>";
 		};
 		20A144AA1F1CEEC2005CCDC7 /* Interactor */ = {
@@ -207,7 +207,7 @@
 			children = (
 				20A144AB1F1CEED9005CCDC7 /* GameListInteractor.swift */,
 			);
-			name = Interactor;
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		20A144AE1F1CF0BE005CCDC7 /* DataManager */ = {
@@ -216,7 +216,7 @@
 				20A144B01F1CF0EE005CCDC7 /* Local */,
 				20A144AF1F1CF0D3005CCDC7 /* Remote */,
 			);
-			name = DataManager;
+			path = DataManager;
 			sourceTree = "<group>";
 		};
 		20A144AF1F1CF0D3005CCDC7 /* Remote */ = {
@@ -224,7 +224,7 @@
 			children = (
 				20A144B41F1CF2F3005CCDC7 /* GameRemoteDataManager.swift */,
 			);
-			name = Remote;
+			path = Remote;
 			sourceTree = "<group>";
 		};
 		20A144B01F1CF0EE005CCDC7 /* Local */ = {
@@ -232,7 +232,7 @@
 			children = (
 				20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */,
 			);
-			name = Local;
+			path = Local;
 			sourceTree = "<group>";
 		};
 		20A144B11F1CF11F005CCDC7 /* Service */ = {
@@ -240,7 +240,7 @@
 			children = (
 				20A144B61F1CF546005CCDC7 /* GameService.swift */,
 			);
-			name = Service;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		53599F68C28E1DBEF76046BD /* Pods */ = {
