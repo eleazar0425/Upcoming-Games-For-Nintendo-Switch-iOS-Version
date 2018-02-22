@@ -13,6 +13,8 @@ class SearchViewController: UIViewController {
     var results = [Game]()
     var games: [Game]?
     var presenter: SearchPresenter?
+    var filterBy: FilterBy = .all
+    var actualQuery = ""
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -27,6 +29,8 @@ class SearchViewController: UIViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.searchBar.scopeButtonTitles = ["All", "Digital", "Physical"]
+        
         self.searchBar.becomeFirstResponder()
     }
 
@@ -39,18 +43,40 @@ class SearchViewController: UIViewController {
         searchBar.resignFirstResponder()
         searchBar.endEditing(true)
     }
+    
+    func performSearch(){
+        presenter?.search(query: actualQuery, filterBy: filterBy)
+    }
 }
 
 extension SearchViewController : UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String){
-        presenter?.search(query: searchText)
+        actualQuery = searchText
+        performSearch()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar){
         //todo hide keyboard
         searchBar.resignFirstResponder()
         searchBar.endEditing(true)
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        switch selectedScope {
+        case 0:
+            filterBy = .all
+            break
+        case 1:
+            filterBy = .digitalOnly
+            break
+        case 2:
+            filterBy = .physicalOnly
+            break
+        default:
+            filterBy = .all
+        }
+        performSearch()
     }
 }
 
@@ -64,11 +90,6 @@ extension SearchViewController : SearchProtocol {
 }
 
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO
-    }
-    
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -101,11 +122,9 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         }
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
-
 }

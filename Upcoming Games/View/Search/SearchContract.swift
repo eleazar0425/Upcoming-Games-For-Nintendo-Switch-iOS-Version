@@ -27,4 +27,25 @@ class SearchPresenter {
         }
         view.setResults(games: result, error: nil)
     }
+    
+    func search(query: String, filterBy: FilterBy){
+        switch filterBy {
+        case .digitalOnly:
+            let result = view.games?.filter {
+                return $0.title.lowercased().range(of: query.lowercased()) != nil && !$0.physicalRelease
+            }
+            view.setResults(games: result, error: nil)
+            return
+        case .physicalOnly:
+            let result = view.games?.filter {
+                return $0.title.lowercased().range(of: query.lowercased()) != nil && $0.physicalRelease
+            }
+            view.setResults(games: result, error: nil)
+            return
+            return
+        default:
+            return search(query:query)
+            
+        }
+    }
 }
