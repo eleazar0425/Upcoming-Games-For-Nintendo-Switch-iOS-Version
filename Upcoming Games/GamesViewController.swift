@@ -94,6 +94,8 @@ class GamesViewController: UIViewController {
         alertController.addAction(byLowestPrice)
         alertController.addAction(byHighestPrice)
         
+        alertController.popoverPresentationController?.sourceView = self.view  // works for both iPhone & iPad
+        
         self.present(alertController, animated: true, completion: nil)
         
     }
@@ -123,6 +125,8 @@ class GamesViewController: UIViewController {
         alertController.addAction(filterPhysicalOnly)
         alertController.addAction(filterDigitalOnly)
         
+        alertController.popoverPresentationController?.sourceView = self.view  // works for both iPhone & iPad
+
         self.present(alertController, animated: true, completion: nil)
     }
 }
@@ -200,6 +204,7 @@ extension GamesViewController : GameListProtocol {
         guard let gamesResult = games else {
             return showErrorMessage()
         }
+        self.games.removeAll()
         self.games += gamesResult
         self.backup = games
         order(by: orderByState)
@@ -234,6 +239,7 @@ extension GamesViewController : GameListProtocol {
             if let backupGames = self.backup {
                 self.games = backupGames
                 order(by: orderByState, fromFilter: true)
+                self.filterState = by
                 self.tableView.reloadData()
             }
             return

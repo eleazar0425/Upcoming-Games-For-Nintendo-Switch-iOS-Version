@@ -24,8 +24,6 @@ class GameService {
             guard let games = data?.arrayValue.flatMap(Game.init) else {
                 return completion(nil, ServiceError.noDataAvailable())
             }
-            print(games)
-            print(serviceError)
             completion(games, serviceError)
         }
     }

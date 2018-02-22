@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwh-0h-VZ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwh-0h-VZ0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -59,7 +59,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Name">
                                                             <attributes>
-                                                                <font key="NSFont" size="14" name="Roboto-Bold"/>
+                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -67,14 +67,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZP-M5-lCL">
-                                                    <rect key="frame" x="155" y="64" width="204" height="14"/>
+                                                    <rect key="frame" x="155" y="64" width="197" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="5Lj-Fg-VDN"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Players: 2 simultaneous">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -87,7 +87,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="$0.0">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -95,14 +95,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bze-Bc-fpr">
-                                                    <rect key="frame" x="155" y="82" width="204" height="14"/>
+                                                    <rect key="frame" x="155" y="82" width="197" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="D9j-KV-ehQ"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Release on: 0000">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -110,11 +110,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTm-AD-Hyn">
-                                                    <rect key="frame" x="155" y="102" width="204" height="14"/>
+                                                    <rect key="frame" x="155" y="102" width="197" height="14"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Physical release: yes">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -122,14 +122,14 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6X-SR-mVW">
-                                                    <rect key="frame" x="155" y="46" width="204" height="14"/>
+                                                    <rect key="frame" x="155" y="46" width="197" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="14" id="CTo-gQ-6zF"/>
                                                     </constraints>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Already Released">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -188,7 +188,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Upcoming games" id="lxd-1Z-bh9">
-                        <barButtonItem key="leftBarButtonItem" image="AboutIcon" style="plain" id="lDg-Rk-MTy">
+                        <barButtonItem key="leftBarButtonItem" image="searchIcon" style="plain" id="lDg-Rk-MTy">
                             <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="a95-nR-Bwu" kind="show" identifier="searchSegue" id="zdT-z1-pHC"/>
@@ -259,7 +259,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Name">
                                                             <attributes>
-                                                                <font key="NSFont" size="14" name="Roboto-Bold"/>
+                                                                <font key="NSFont" metaFont="system" size="14"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -272,7 +272,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Players: 2 simultaneous">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -285,7 +285,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="$0.0">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -298,7 +298,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Release on: 0000">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -311,7 +311,7 @@
                                                     <attributedString key="attributedText">
                                                         <fragment content="Physical release: yes">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Regular"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -319,12 +319,12 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eV6-be-xV3">
-                                                    <rect key="frame" x="216" y="42" width="94" height="21"/>
+                                                    <rect key="frame" x="216" y="41" width="94" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <attributedString key="attributedText">
                                                         <fragment content="Already Released">
                                                             <attributes>
-                                                                <font key="NSFont" size="12" name="Roboto-Bold"/>
+                                                                <font key="NSFont" metaFont="cellTitle"/>
                                                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                             </attributes>
                                                         </fragment>
@@ -359,8 +359,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="AboutIcon" width="27" height="27"/>
         <image name="filterIcon" width="27" height="27"/>
+        <image name="searchIcon" width="24" height="24"/>
         <image name="sortIcon" width="24" height="24"/>
     </resources>
 </document>
