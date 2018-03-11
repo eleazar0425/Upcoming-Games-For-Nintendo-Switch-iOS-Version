@@ -2,7 +2,7 @@
 
 iOS version of https://github.com/eleazar0425/Upcoming-Games-For-Nintendo-Switch
 
-VIPE pattern + Alamofire + Realm + SwinftInject 
+MVP pattern + Alamofire + Realm + SwinftInject 
 
 ![alt text](https://media.giphy.com/media/1gdwLPKhXkAZRfAEDb/giphy.gif)
 
