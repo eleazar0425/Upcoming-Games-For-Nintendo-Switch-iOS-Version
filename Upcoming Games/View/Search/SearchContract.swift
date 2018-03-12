@@ -42,7 +42,6 @@ class SearchPresenter {
             }
             view.setResults(games: result, error: nil)
             return
-            return
         default:
             return search(query:query)
             

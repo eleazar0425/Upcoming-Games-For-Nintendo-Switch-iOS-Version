@@ -12,8 +12,8 @@ class GameListInteractor {
     
     typealias Completion = (_ games: [Game]?, _ error: Error?) -> Void
     
-    var localDataManager: GameLocalDataManager?
-    var remoteDataManager: GameRemoteDataManager?
+    var localDataManager: GameLocalDataManager!
+    var remoteDataManager: GameRemoteDataManager!
     
     func getGames(completion: @escaping Completion){
         guard Reachability.isConnectedToNetwork() else {
@@ -21,7 +21,7 @@ class GameListInteractor {
             return completion(games, nil)
         }
         
-        remoteDataManager?.getGames(completion: { (games, error) in
+        remoteDataManager.getGames(completion: { (games, error) in
             if let gamesResult = games {
                 self.saveGames(games: gamesResult)
             }
@@ -38,18 +38,18 @@ class GameListInteractor {
     
     
     fileprivate func saveGames(games: [Game]){
-        localDataManager?.saveGames(games: games)
+        localDataManager.saveGames(games: games)
     }
     
     func saveFavorite(_ id: String){
-        localDataManager?.saveFavorite(favorite: Favorite(id))
+        localDataManager.saveFavorite(favorite: Favorite(id))
     }
     
     func deleteFavorite(_ id: String){
-        localDataManager?.deleteFavorite(favorite: Favorite(id))
+        localDataManager.deleteFavorite(favorite: Favorite(id))
     }
     
     func isFavorite(_ id: String) -> Bool {
-        return (localDataManager?.isFavorite(favorite: Favorite(id)))!
+        return localDataManager.isFavorite(favorite: Favorite(id))
     }
 }

@@ -12,7 +12,7 @@ class SearchViewController: UIViewController {
     
     var results = [Game]()
     var games: [Game]?
-    var presenter: SearchPresenter?
+    var presenter: SearchPresenter!
     var filterBy: FilterBy = .all
     var actualQuery = ""
 
@@ -45,7 +45,7 @@ class SearchViewController: UIViewController {
     }
     
     func performSearch(){
-        presenter?.search(query: actualQuery, filterBy: filterBy)
+        presenter.search(query: actualQuery, filterBy: filterBy)
     }
 }
 

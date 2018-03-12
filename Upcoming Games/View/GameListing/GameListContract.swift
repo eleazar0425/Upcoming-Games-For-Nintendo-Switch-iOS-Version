@@ -14,14 +14,14 @@ protocol GameListProtocol {
 
 class GameListPresenter {
     var view: GameListProtocol
-    var interactor: GameListInteractor?
+    var interactor: GameListInteractor!
     
     init(_ view: GameListProtocol){
         self.view = view
     }
     
     func getGameList(){
-        interactor?.getGames(completion: { (games, error) in
+        interactor.getGames(completion: { (games, error) in
             self.view.setGameList(games: games, error: error)
         })
     }
@@ -60,7 +60,6 @@ class GameListPresenter {
                 return date1 < date2
             }
         }
-        
     }
     
     func filter(games: [Game], by: FilterBy) -> [Game]? {
@@ -77,12 +76,10 @@ class GameListPresenter {
                 return game.physicalRelease
             }
         
-        
         case .digitalOnly:
             return games.filter { game in
                 return !game.physicalRelease
             }
-            
         
         case .notReleased:
             return games.filter { game in
@@ -91,26 +88,23 @@ class GameListPresenter {
             
         case .favorites:
             return games.filter { game in
-                return (interactor?.isFavorite(game.id))!
+                return interactor.isFavorite(game.id)
             }
             
         case .all:
             return games
-            
         }
-      
     }
-    
  
     func saveFavorite(id: String){
-        interactor?.saveFavorite(id)
+        interactor.saveFavorite(id)
     }
     
     func deleteFavorite(id: String){
-        interactor?.deleteFavorite(id)
+        interactor.deleteFavorite(id)
     }
     
     func isFavorite(id: String) -> Bool {
-        return (interactor?.isFavorite(id))!
+        return interactor.isFavorite(id)
     }
 }

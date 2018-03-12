@@ -19,7 +19,7 @@ class GamesViewController: UIViewController {
     var filterState: FilterBy = .all
     var orderByState: OrderBy = .releaseDate
     
-    var presenter: GameListPresenter?
+    var presenter: GameListPresenter!
     
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
     
@@ -45,7 +45,7 @@ class GamesViewController: UIViewController {
         
         prepareActivityIndicator()
         activityIndicator.startAnimating()
-        presenter?.getGameList()
+        presenter.getGameList()
         
     }
 
@@ -66,7 +66,7 @@ class GamesViewController: UIViewController {
     }
     
     func handleRefresh(_ refreshControl: UIRefreshControl){
-        presenter?.getGameList()
+        presenter.getGameList()
     }
     
     
@@ -173,7 +173,7 @@ extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
         }
         
         cell.indexPath = indexPath
-        cell.favorite = presenter?.isFavorite(id: game.id)
+        cell.favorite = presenter.isFavorite(id: game.id)
         cell.delegate = self
     
         return cell
@@ -188,10 +188,10 @@ extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
         let game = games[index.row]
         var message = ""
         if isFavorite {
-            presenter?.saveFavorite(id: game.id)
+            presenter.saveFavorite(id: game.id)
             message = "\(game.title) has been added to favorites"
         }else{
-            presenter?.deleteFavorite(id: game.id)
+            presenter.deleteFavorite(id: game.id)
             message = "\(game.title) has been removed from favorites"
         }
         
@@ -223,7 +223,7 @@ extension GamesViewController : GameListProtocol {
     }
     
     func order(by: OrderBy, fromFilter: Bool = false){
-        guard let sortedGames =  presenter?.order(games: games, by: by) else { return }
+        guard let sortedGames =  presenter.order(games: games, by: by) else { return }
         self.games = sortedGames
         if !fromFilter {
             filter(by: filterState, fromOrderBy: true)
@@ -233,7 +233,7 @@ extension GamesViewController : GameListProtocol {
     }
     
     func filter(by: FilterBy, fromOrderBy: Bool = false){
-        guard let filteredGames = presenter?.filter(games: games, by: by) else { return }
+        guard let filteredGames = presenter.filter(games: games, by: by) else { return }
         
         guard by != .all else {
             if let backupGames = self.backup {
