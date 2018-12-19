@@ -13,7 +13,7 @@ enum GameRouter : URLRequestConvertible {
     
     case getGamesOfAmerica()
     
-    static let baseURL = "http://eshopgames.azurewebsites.net"
+    static let baseURL = "https://nintendoswitchgames.herokuapp.com"
     
     var method: HTTPMethod {
         return .get

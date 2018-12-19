@@ -11,13 +11,13 @@ import SwiftyJSON
 import RealmSwift
 
 class Game : Object {
-    dynamic var id: String = ""
-    dynamic var title: String = ""
-    dynamic var releaseDate: String = ""
-    dynamic var price: String = "0"
-    dynamic var boxArt: String = ""
-    dynamic var numberOfPlayers: String = ""
-    dynamic var physicalRelease: Bool = false
+    @objc dynamic var id: String = ""
+    @objc dynamic var title: String = ""
+    @objc dynamic var releaseDate: String = ""
+    @objc dynamic var price: String = "0"
+    @objc dynamic var boxArt: String = ""
+    @objc dynamic var numberOfPlayers: String = ""
+    @objc dynamic var physicalRelease: Bool = false
     
 
     convenience init(withJSON json: JSON){

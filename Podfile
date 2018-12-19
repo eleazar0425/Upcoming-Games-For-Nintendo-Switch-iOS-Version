@@ -6,11 +6,11 @@ target 'Upcoming Games' do
   use_frameworks!
 
   # Pods for Upcoming Games
-  pod 'Alamofire', '~> 4.4'
-  pod 'AlamofireImage', '~> 3.1'
-  pod 'SwiftyJSON', '~> 3.1.4'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod 'SwiftyJSON'
   pod 'RealmSwift'
-  pod 'Swinject', '2.0.0'
-  pod 'SwinjectStoryboard', '1.0.0'
-  pod 'Toast-Swift', '~> 2.0.0'
+  pod 'Swinject'
+  pod 'SwinjectStoryboard'
+  pod 'Toast-Swift'
 end

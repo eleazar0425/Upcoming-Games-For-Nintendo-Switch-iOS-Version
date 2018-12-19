@@ -21,7 +21,7 @@ class GameService {
     func getGames(completion: @escaping CompletionHandler){
         let route = GameRouter.getGamesOfAmerica()
         client.request(route) { (data, serviceError) in
-            guard let games = data?.arrayValue.flatMap(Game.init) else {
+            guard let games = data?.arrayValue.compactMap(Game.init) else {
                 return completion(nil, ServiceError.noDataAvailable())
             }
             completion(games, serviceError)

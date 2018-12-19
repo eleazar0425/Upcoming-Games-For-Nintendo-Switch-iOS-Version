@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 class Favorite : Object {
-    dynamic var id: String = ""
+    @objc dynamic var id: String = ""
     
     override class func primaryKey() -> String {
         return "id"

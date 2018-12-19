@@ -21,13 +21,13 @@ class GamesViewController: UIViewController {
     
     var presenter: GameListPresenter!
     
-    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.gray)
+    var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.gray)
     
     lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:
             #selector(GamesViewController.handleRefresh(_:)),
-                                 for: UIControlEvents.valueChanged)
+                                 for: UIControl.Event.valueChanged)
         refreshControl.tintColor = UIColor.orange
         
         return refreshControl
@@ -65,7 +65,7 @@ class GamesViewController: UIViewController {
         view.addSubview(activityIndicator)
     }
     
-    func handleRefresh(_ refreshControl: UIRefreshControl){
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl){
         presenter.getGameList()
     }
     
@@ -215,8 +215,8 @@ extension GamesViewController : GameListProtocol {
     }
     
     func showErrorMessage(){
-        let alert = UIAlertController(title: "Error", message: "There was an error, plase try again later", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Error", message: "There was an error, plase try again later", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         self.activityIndicator.stopAnimating()
         self.refreshControl.endRefreshing()
