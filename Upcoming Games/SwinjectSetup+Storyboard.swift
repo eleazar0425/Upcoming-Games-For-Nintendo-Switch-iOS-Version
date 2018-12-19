@@ -21,7 +21,11 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.register(Realm.self) { _  in
-            try! Realm()
+            let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
+            
+            // Tell Realm to use this new configuration object for the default Realm
+            Realm.Configuration.defaultConfiguration = config
+            return try! Realm()
         }.inObjectScope(.transient)
         
         defaultContainer.register(GameLocalDataManager.self) { r  in

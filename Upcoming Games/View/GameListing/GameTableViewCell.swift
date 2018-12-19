@@ -24,6 +24,8 @@ class GameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var price: UILabel!
     
+    @IBOutlet weak var salePrice: UILabel!
+    
     @IBOutlet weak var favoriteToggle: UIButton?
     
     var delegate: ToggleFavoriteDelegate!
@@ -31,6 +33,16 @@ class GameTableViewCell: UITableViewCell {
     var favorite: Bool! {
         didSet {
             favoriteToggle?.isSelected = favorite
+        }
+    }
+    var hasSalePrice: Bool! {
+        didSet {
+            salePrice.isHidden = !hasSalePrice
+            let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: price.text!)
+            if hasSalePrice {
+                attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+            }
+            self.price.attributedText = attributeString
         }
     }
     
@@ -50,8 +62,6 @@ class GameTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 }
 

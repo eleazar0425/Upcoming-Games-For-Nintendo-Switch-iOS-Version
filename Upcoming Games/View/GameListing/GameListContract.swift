@@ -66,6 +66,11 @@ class GameListPresenter {
         
         switch by {
             
+        case .sales:
+            return games.filter{ game  in
+                return !game.salePrice.isEmpty
+            }
+            
         case .alreadyReleased:
             return games.filter { game in
                 return true //TODO complete this

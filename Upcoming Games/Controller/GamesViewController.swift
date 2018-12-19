@@ -103,6 +103,10 @@ class GamesViewController: UIViewController {
     @IBAction func filterAction(_ sender: Any) {
        
         let alertController = UIAlertController(title: "Filter by", message: nil, preferredStyle: .actionSheet)
+        
+        let sales = UIAlertAction(title: "Games on sales", style: .default) { _ in
+            self.filter(by: .sales)
+        }
        
         let filterPhysicalOnly = UIAlertAction(title: "Digital only", style: .default) { _ in
             self.filter(by: .digitalOnly)
@@ -120,6 +124,7 @@ class GamesViewController: UIViewController {
             self.filter(by: .all)
         }
         
+        alertController.addAction(sales)
         alertController.addAction(filterAll)
         alertController.addAction(filterFavorites)
         alertController.addAction(filterPhysicalOnly)
@@ -159,6 +164,15 @@ extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
         cell.releaseOn.text = game.releaseDate
         cell.boxArt.setImage(withPath: game.boxArt, placeholderImage: #imageLiteral(resourceName: "placeholder"))
         cell.price.text = (game.price != "" ? "$\(game.price)": "TBA" )
+        
+        let salePrice = game.salePrice
+        if !salePrice.isEmpty {
+            cell.hasSalePrice = true
+            cell.salePrice.text = "$\(salePrice)"
+        }else{
+            cell.hasSalePrice = false
+        }
+        
         cell.physicalRelease.text = "Physical release: \(game.physicalRelease ? "Yes" : "No")"
         
         guard let releaseDate = DateUtil.parse(from: game.releaseDate),

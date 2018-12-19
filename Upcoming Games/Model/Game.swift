@@ -18,6 +18,7 @@ class Game : Object {
     @objc dynamic var boxArt: String = ""
     @objc dynamic var numberOfPlayers: String = ""
     @objc dynamic var physicalRelease: Bool = false
+    @objc dynamic var salePrice: String = ""
     
 
     convenience init(withJSON json: JSON){
@@ -29,6 +30,7 @@ class Game : Object {
         self.boxArt = json["front_box_art"].stringValue
         self.numberOfPlayers = json["number_of_players"].stringValue
         self.physicalRelease = json["buyitnow"].boolValue
+        self.salePrice = json["sale_price"].stringValue
     }
     
     override class func primaryKey() -> String {
@@ -44,6 +46,7 @@ class Game : Object {
         clon.price = game.price
         clon.releaseDate = game.releaseDate
         clon.title = game.title
+        clon.salePrice = game.salePrice
         return clon
     }
 }

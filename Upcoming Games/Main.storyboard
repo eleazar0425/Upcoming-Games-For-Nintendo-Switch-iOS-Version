@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwh-0h-VZ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwh-0h-VZ0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -143,11 +141,25 @@
                                                     </connections>
                                                 </button>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Bf-wE-pbW">
-                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="164"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="164.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="147" id="mfi-dM-kky"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaH-Vp-yYG">
+                                                    <rect key="frame" x="338" y="130" width="27" height="15"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment content="$0.0">
+                                                            <attributes>
+                                                                <color key="NSColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                                <font key="NSOriginalFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="trailingMargin" secondItem="XZP-M5-lCL" secondAttribute="trailing" constant="8" id="2Ga-mM-ikK"/>
@@ -161,6 +173,7 @@
                                                 <constraint firstItem="Mk4-aJ-3Dp" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="Wat-7r-obk"/>
                                                 <constraint firstItem="TTm-AD-Hyn" firstAttribute="top" secondItem="Bze-Bc-fpr" secondAttribute="bottom" constant="6" id="WsO-jn-sRp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="TTm-AD-Hyn" secondAttribute="trailing" constant="8" id="YLY-Wg-ave"/>
+                                                <constraint firstAttribute="trailing" secondItem="uaH-Vp-yYG" secondAttribute="trailing" constant="10" id="aLY-lu-sUX"/>
                                                 <constraint firstItem="d6X-SR-mVW" firstAttribute="top" secondItem="Mk4-aJ-3Dp" secondAttribute="bottom" id="dxw-mu-X2l"/>
                                                 <constraint firstAttribute="bottom" secondItem="3gk-Cs-7dY" secondAttribute="bottom" constant="5" id="fcU-yQ-R4c"/>
                                                 <constraint firstItem="2Bf-wE-pbW" firstAttribute="top" secondItem="dxg-h2-PM0" secondAttribute="top" id="hhg-gA-nZz"/>
@@ -168,6 +181,7 @@
                                                 <constraint firstAttribute="trailing" secondItem="Mk4-aJ-3Dp" secondAttribute="trailing" constant="8" id="tSu-zJ-Xfx"/>
                                                 <constraint firstItem="XZP-M5-lCL" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="uPt-SE-SPn"/>
                                                 <constraint firstItem="d6X-SR-mVW" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="w4Y-gc-YLT"/>
+                                                <constraint firstItem="3gk-Cs-7dY" firstAttribute="top" secondItem="uaH-Vp-yYG" secondAttribute="bottom" id="xIW-kT-hwR"/>
                                                 <constraint firstItem="Bze-Bc-fpr" firstAttribute="top" secondItem="XZP-M5-lCL" secondAttribute="bottom" constant="4" id="ynF-Fs-V7t"/>
                                                 <constraint firstItem="TTm-AD-Hyn" firstAttribute="leading" secondItem="2Bf-wE-pbW" secondAttribute="trailing" constant="8" id="zqc-au-dmN"/>
                                             </constraints>
@@ -180,6 +194,7 @@
                                             <outlet property="physicalRelease" destination="TTm-AD-Hyn" id="kgm-zL-cvb"/>
                                             <outlet property="price" destination="3gk-Cs-7dY" id="NX9-rP-t2f"/>
                                             <outlet property="releaseOn" destination="Bze-Bc-fpr" id="OCd-d7-AVZ"/>
+                                            <outlet property="salePrice" destination="uaH-Vp-yYG" id="mfI-uh-ukQ"/>
                                             <outlet property="title" destination="Mk4-aJ-3Dp" id="tkm-wm-FLG"/>
                                         </connections>
                                     </tableViewCell>
@@ -249,7 +264,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wWI-ml-eEu">
-                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="164"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="147" height="164.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="147" id="i5Q-Bd-4hG"/>
                                                     </constraints>
@@ -401,7 +416,7 @@
     </scenes>
     <resources>
         <image name="filterIcon" width="27" height="27"/>
-        <image name="searchIcon" width="24" height="24"/>
+        <image name="searchIcon" width="48" height="48"/>
         <image name="sortIcon" width="24" height="24"/>
     </resources>
 </document>

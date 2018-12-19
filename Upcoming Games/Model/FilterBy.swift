@@ -14,5 +14,6 @@ enum FilterBy {
     case digitalOnly
     case physicalOnly
     case favorites
+    case sales
     case all
 }
