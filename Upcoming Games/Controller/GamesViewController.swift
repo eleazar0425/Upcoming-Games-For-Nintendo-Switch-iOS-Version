@@ -275,14 +275,21 @@ extension GamesViewController : GameListProtocol {
                 return DateUtil.daysBetweenDates(today, gameDate)! >= 0
             }
             
-            var index = (self.games.count) - 1
+            var index = 0
+            
+            if self.games.count > 0 {
+                index = (self.games.count) - 1
+            }
             
             if firstTodayRelease != nil {
                 index = self.games.firstIndex(of: firstTodayRelease!) ?? 0
             }
+            
             let deadlineTime = DispatchTime.now() + .seconds(1)
             DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
-                self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: true)
+                if self.tableView.numberOfSections > 0, self.tableView.numberOfRows(inSection: 0) > index {
+                    self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: true)
+                }
             }
         }
     }
