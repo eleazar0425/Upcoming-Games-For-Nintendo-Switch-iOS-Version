@@ -8,6 +8,7 @@
 
 import UIKit
 import Toast_Swift
+import UserNotifications
 
 class GamesViewController: UIViewController {
 
@@ -46,6 +47,7 @@ class GamesViewController: UIViewController {
         prepareActivityIndicator()
         activityIndicator.startAnimating()
         presenter.getGameList()
+        
         
     }
 
@@ -204,9 +206,32 @@ extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
         if isFavorite {
             presenter.saveFavorite(id: game.id)
             message = "\(game.title) has been added to favorites"
+            let content = UNMutableNotificationContent()
+            content.title = "Beep, boop!"
+            content.body = "\(game.title) is releasing today!"
+            content.sound = UNNotificationSound.default
+            
+            let releaseDate = DateUtil.parse(from: game.releaseDate)!
+            
+            let calendar = Calendar.current
+            
+            let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: releaseDate)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            let identifier = "FavoriteGameReleasedNotification-\(game.id)"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(request, withCompletionHandler: { (error) in
+                if error != nil {
+                    print("something went wrong!")
+                }
+            })
         }else{
             presenter.deleteFavorite(id: game.id)
             message = "\(game.title) has been removed from favorites"
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["FavoriteGameReleasedNotification-\(game.id)"])
         }
         
         self.view.makeToast(message)
