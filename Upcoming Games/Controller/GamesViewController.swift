@@ -262,13 +262,13 @@ extension GamesViewController : GameListProtocol {
     func order(by: OrderBy, fromFilter: Bool = false){
         guard let sortedGames =  presenter.order(games: games, by: by) else { return }
         self.games = sortedGames
+        self.orderByState = by
         if !fromFilter {
             filter(by: filterState, fromOrderBy: true)
         }
-        self.orderByState = by
         self.tableView.reloadData()
         
-        if orderByState == .releaseDate {
+        if case .releaseDate = self.orderByState {
             let firstTodayRelease = self.games.first { game -> Bool in
                 let today = Date.init()
                 let gameDate = DateUtil.parse(from: game.releaseDate)!
@@ -288,7 +288,7 @@ extension GamesViewController : GameListProtocol {
     }
     
     func filter(by: FilterBy, fromOrderBy: Bool = false){
-        guard let filteredGames = presenter.filter(games: games, by: by) else { return }
+        guard let filteredGames = presenter.filter(games: self.backup!, by: by) else { return }
         
         guard by != .all else {
             if let backupGames = self.backup {
@@ -300,11 +300,10 @@ extension GamesViewController : GameListProtocol {
             return
         }
         
+        self.games = filteredGames
         if !fromOrderBy {
             order(by: orderByState, fromFilter: true)
         }
-        
-        self.games = filteredGames
         self.filterState = by
         self.tableView.reloadData()
     }
