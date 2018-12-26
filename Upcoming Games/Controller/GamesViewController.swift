@@ -47,8 +47,6 @@ class GamesViewController: UIViewController {
         prepareActivityIndicator()
         activityIndicator.startAnimating()
         presenter.getGameList()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -269,6 +267,24 @@ extension GamesViewController : GameListProtocol {
         }
         self.orderByState = by
         self.tableView.reloadData()
+        
+        if orderByState == .releaseDate {
+            let firstTodayRelease = self.games.first { game -> Bool in
+                let today = Date.init()
+                let gameDate = DateUtil.parse(from: game.releaseDate)!
+                return DateUtil.daysBetweenDates(today, gameDate)! >= 0
+            }
+            
+            var index = (self.games.count) - 1
+            
+            if firstTodayRelease != nil {
+                index = self.games.firstIndex(of: firstTodayRelease!) ?? 0
+            }
+            let deadlineTime = DispatchTime.now() + .seconds(1)
+            DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
+                self.tableView.scrollToRow(at: IndexPath(row: index, section: 0), at: .middle, animated: true)
+            }
+        }
     }
     
     func filter(by: FilterBy, fromOrderBy: Bool = false){
