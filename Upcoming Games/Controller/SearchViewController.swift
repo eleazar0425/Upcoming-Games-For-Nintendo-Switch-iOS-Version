@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Toast_Swift
+import UserNotifications
 
 class SearchViewController: UIViewController {
     
@@ -15,6 +17,7 @@ class SearchViewController: UIViewController {
     var presenter: SearchPresenter!
     var filterBy: FilterBy = .all
     var actualQuery = ""
+    weak var delegate: FavoriteChangedOnSearch?
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -28,6 +31,8 @@ class SearchViewController: UIViewController {
         self.searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
         
         self.searchBar.scopeButtonTitles = ["All", "Digital", "Physical"]
         
@@ -89,6 +94,47 @@ extension SearchViewController : SearchProtocol {
     }
 }
 
+extension SearchViewController : ToggleFavoriteDelegate {
+    func setFavorite(at index: IndexPath, isFavorite: Bool) {
+        let game = results[index.row]
+        var message = ""
+        if isFavorite {
+            presenter.saveFavorite(id: game.id)
+            message = "\(game.title) has been added to favorites"
+            let content = UNMutableNotificationContent()
+            content.title = "Beep, boop!"
+            content.body = "\(game.title) is releasing today!"
+            content.sound = UNNotificationSound.default
+            
+            let releaseDate = DateUtil.parse(from: game.releaseDate)!
+            
+            let calendar = Calendar.current
+            
+            let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: releaseDate)
+            
+            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+            
+            let identifier = "FavoriteGameReleasedNotification-\(game.id)"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(request, withCompletionHandler: { (error) in
+                if error != nil {
+                    print("something went wrong!")
+                }
+            })
+        }else{
+            presenter.deleteFavorite(id: game.id)
+            message = "\(game.title) has been removed from favorites"
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["FavoriteGameReleasedNotification-\(game.id)"])
+        }
+        
+        self.delegate?.favoriteDidChange(game: game, isFavorite: isFavorite)
+        
+        self.view.makeToast(message)
+    }
+}
+
 extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -121,10 +167,18 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
             cell.daysToRelease.text = "Already released"
         }
         
+        cell.indexPath = indexPath
+        cell.favorite = presenter.isFavorite(id: game.id)
+        cell.delegate = self
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
+}
+
+protocol FavoriteChangedOnSearch: class {
+    func favoriteDidChange(game: Game, isFavorite: Bool)
 }

@@ -52,6 +52,7 @@ extension SwinjectStoryboard {
         
         defaultContainer.storyboardInitCompleted(SearchViewController.self) { (r,c) in
             let presenter = SearchPresenter(c)
+            presenter.interactor = r.resolve(GameListInteractor.self)!
             c.presenter = presenter
         }
     }

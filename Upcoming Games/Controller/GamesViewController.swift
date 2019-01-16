@@ -43,6 +43,8 @@ class GamesViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.refreshControl = refreshControl
+        let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
+        self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
         
         prepareActivityIndicator()
         activityIndicator.startAnimating()
@@ -56,6 +58,7 @@ class GamesViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! SearchViewController
+        destination.delegate = self
         destination.games = backup
     }
     
@@ -144,7 +147,7 @@ extension GamesViewController : UITableViewDelegate {
 }
 
 
-extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
+extension GamesViewController : UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -197,7 +200,9 @@ extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return games.count
     }
-    
+}
+
+extension GamesViewController: ToggleFavoriteDelegate, FavoriteChangedOnSearch {
     func setFavorite(at index: IndexPath, isFavorite: Bool) {
         let game = games[index.row]
         var message = ""
@@ -233,6 +238,11 @@ extension GamesViewController : UITableViewDataSource, ToggleFavoriteDelegate {
         }
         
         self.view.makeToast(message)
+    }
+    
+    func favoriteDidChange(game: Game, isFavorite: Bool) {
+        guard let index = games.firstIndex(of: game) else { return }
+        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }
 

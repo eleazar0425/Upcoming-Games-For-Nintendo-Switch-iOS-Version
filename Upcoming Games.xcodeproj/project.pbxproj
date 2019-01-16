@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		015FCF528F3DED1CB19976F4 /* Pods_Upcoming_Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */; };
+		10014FC221EFB5E5000FE29C /* GameViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10014FC121EFB5E4000FE29C /* GameViewCell.xib */; };
 		202D9E2B1F1D562E00B1E06E /* GameListContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202D9E2A1F1D562E00B1E06E /* GameListContract.swift */; };
 		202D9E2D1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202D9E2C1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift */; };
 		202D9E301F20DF7F00B1E06E /* DateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10014FC121EFB5E4000FE29C /* GameViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewCell.xib; sourceTree = "<group>"; };
 		202D9E2A1F1D562E00B1E06E /* GameListContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListContract.swift; sourceTree = "<group>"; };
 		202D9E2C1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectSetup+Storyboard.swift"; sourceTree = "<group>"; };
 		202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10014FC021EFB5CA000FE29C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				10014FC121EFB5E4000FE29C /* GameViewCell.xib */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		202D9E291F1D561800B1E06E /* GameListing */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +158,7 @@
 		20A1448A1F191212005CCDC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				10014FC021EFB5CA000FE29C /* Common */,
 				2099466B1F4B3570001F5FA4 /* Search */,
 				202D9E291F1D561800B1E06E /* GameListing */,
 			);
@@ -328,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10014FC221EFB5E5000FE29C /* GameViewCell.xib in Resources */,
 				20A144891F190DD9005CCDC7 /* Main.storyboard in Resources */,
 				20A1447E1F190D6F005CCDC7 /* Assets.xcassets in Resources */,
 			);

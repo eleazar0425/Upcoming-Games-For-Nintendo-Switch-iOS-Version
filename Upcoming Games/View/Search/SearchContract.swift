@@ -16,6 +16,7 @@ protocol SearchProtocol {
 class SearchPresenter {
     
     var view: SearchProtocol
+    var interactor: GameListInteractor!
     
     init(_ view: SearchProtocol) {
         self.view = view
@@ -46,5 +47,17 @@ class SearchPresenter {
             return search(query:query)
             
         }
+    }
+    
+    func saveFavorite(id: String){
+        interactor.saveFavorite(id)
+    }
+    
+    func deleteFavorite(id: String){
+        interactor.deleteFavorite(id)
+    }
+    
+    func isFavorite(id: String) -> Bool {
+        return interactor.isFavorite(id)
     }
 }
