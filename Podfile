@@ -13,4 +13,5 @@ target 'Upcoming Games' do
   pod 'Swinject'
   pod 'SwinjectStoryboard'
   pod 'Toast-Swift'
+  pod 'HGPlaceholders'
 end

@@ -2,6 +2,7 @@ PODS:
   - Alamofire (4.8.0)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
+  - HGPlaceholders (0.3.0)
   - Realm (3.12.0):
     - Realm/Headers (= 3.12.0)
   - Realm/Headers (3.12.0)
@@ -16,6 +17,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - HGPlaceholders
   - RealmSwift
   - SwiftyJSON
   - Swinject
@@ -26,6 +28,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
+    - HGPlaceholders
     - Realm
     - RealmSwift
     - SwiftyJSON
@@ -36,6 +39,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
+  HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
@@ -43,6 +47,6 @@ SPEC CHECKSUMS:
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
 
-PODFILE CHECKSUM: cbe06a782171267d3166f4a7e6106ea3c09a1558
+PODFILE CHECKSUM: 297be16eba7d23c6b0c7715121151c48967263f4
 
 COCOAPODS: 1.5.3

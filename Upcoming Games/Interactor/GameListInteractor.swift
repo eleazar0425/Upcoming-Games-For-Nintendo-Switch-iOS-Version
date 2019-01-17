@@ -17,7 +17,12 @@ class GameListInteractor {
     
     func getGames(completion: @escaping Completion){
         guard Reachability.isConnectedToNetwork() else {
-            let games = localDataManager?.getGames()
+            guard let games = localDataManager?.getGames() else { return completion(nil, ServiceError.noDataAvailable()) }
+            
+            guard !games.isEmpty else {
+                return completion(games, ServiceError.noDataAvailable())
+            }
+            
             return completion(games, nil)
         }
         

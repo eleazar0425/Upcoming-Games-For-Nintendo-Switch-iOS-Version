@@ -9,10 +9,11 @@
 import UIKit
 import Toast_Swift
 import UserNotifications
+import HGPlaceholders
 
 class GamesViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: TableView!
     
     var games = [Game]()
     var backup: [Game]?
@@ -42,12 +43,14 @@ class GamesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.placeholderDelegate = self
         tableView.refreshControl = refreshControl
         let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
         
         prepareActivityIndicator()
-        activityIndicator.startAnimating()
+        //activityIndicator.startAnimating()
+        tableView.showLoadingPlaceholder()
         presenter.getGameList()
     }
 
@@ -251,22 +254,35 @@ extension GamesViewController : GameListProtocol {
         guard let gamesResult = games else {
             return showErrorMessage()
         }
+        
+        guard error == nil else {
+            return showErrorMessage()
+        }
+        
+        guard !gamesResult.isEmpty else {
+            tableView.showErrorPlaceholder()
+            tableView.reloadData()
+            refreshControl.endRefreshing()
+            return
+        }
+        
         self.games.removeAll()
         self.games += gamesResult
         self.backup = games
+        tableView.reloadData()
+        tableView.showDefault()
+        refreshControl.endRefreshing()
         order(by: orderByState)
         filter(by: filterState)
-        tableView.reloadData()
-        activityIndicator.stopAnimating()
-        refreshControl.endRefreshing()
     }
     
     func showErrorMessage(){
-        let alert = UIAlertController(title: "Error", message: "There was an error, plase try again later", preferredStyle: UIAlertController.Style.alert)
+        /*let alert = UIAlertController(title: "Error", message: "There was an error, plase try again later", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
-        self.activityIndicator.stopAnimating()
+        self.activityIndicator.stopAnimating()*/
         self.refreshControl.endRefreshing()
+        self.tableView.showNoConnectionPlaceholder()
     }
     
     func order(by: OrderBy, fromFilter: Bool = false){
@@ -323,5 +339,21 @@ extension GamesViewController : GameListProtocol {
         }
         self.filterState = by
         self.tableView.reloadData()
+        
+        if self.games.isEmpty {
+            self.tableView.showNoResultsPlaceholder()
+        }
+    }
+}
+
+extension GamesViewController: PlaceholderDelegate {
+    func view(_ view: Any, actionButtonTappedFor placeholder: Placeholder) {
+        switch placeholder.key {
+        case PlaceholderKey.noConnectionKey, PlaceholderKey.noResultsKey, PlaceholderKey.errorKey:
+            self.tableView.showLoadingPlaceholder()
+            self.presenter.getGameList()
+        default:
+            return
+        }
     }
 }
