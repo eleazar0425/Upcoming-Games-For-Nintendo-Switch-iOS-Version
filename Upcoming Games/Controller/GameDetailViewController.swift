@@ -22,12 +22,14 @@ class GameDetailViewController: UIViewController {
     
     var game: Game!
     var presenter: GameDetailPresenter!
+    weak var favoriteToggleDelegate: FavoriteChanged!
+    
     @objc let favoriteToggle = UIButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let _ = game, let _ = presenter else {
+        guard let _ = game, let _ = presenter, let _ = favoriteToggleDelegate else {
             fatalError("You must set the 'game' and 'presenter' property in order to use this view controller ")
         }
         
@@ -45,6 +47,8 @@ class GameDetailViewController: UIViewController {
         
         favoriteToggle.addTarget(self, action: #selector(favoriteToggleAction), for: .touchUpInside)
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: favoriteToggle)
+        
+        favoriteToggle.isSelected = presenter.isFavorite(id: self.game.id)
         
         gameTitle.text = game.title
         releaseDate.text = game.releaseDate
@@ -66,8 +70,13 @@ class GameDetailViewController: UIViewController {
     
     @objc func favoriteToggleAction() {
         favoriteToggle.isSelected = !favoriteToggle.isSelected
+        if favoriteToggle.isSelected {
+            presenter.saveFavorite(id: self.game.id)
+        }else{
+            presenter.deleteFavorite(id: self.game.id)
+        }
+        favoriteToggleDelegate.favoriteDidChange(game: self.game, isFavorite: favoriteToggle.isSelected)
     }
-    
 }
 
 extension GameDetailViewController: GameDetailView {

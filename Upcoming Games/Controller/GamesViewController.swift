@@ -68,6 +68,7 @@ class GamesViewController: UIViewController {
             let destination = segue.destination as! GameDetailViewController
             let game = sender as! Game
             destination.game = game
+            destination.favoriteToggleDelegate = self
         }
     }
     
@@ -210,7 +211,7 @@ extension GamesViewController : UITableViewDataSource {
     }
 }
 
-extension GamesViewController: ToggleFavoriteDelegate, FavoriteChangedOnSearch {
+extension GamesViewController: ToggleFavoriteDelegate, FavoriteChanged {
     func setFavorite(at index: IndexPath, isFavorite: Bool) {
         let game = games[index.row]
         var message = ""
@@ -246,6 +247,12 @@ extension GamesViewController: ToggleFavoriteDelegate, FavoriteChangedOnSearch {
         }
         
         self.view.makeToast(message)
+    }
+    
+    func setFavorite(game: Game, isFavorite: Bool) {
+        guard let index = games.firstIndex(of: game) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        self.setFavorite(at: indexPath, isFavorite: isFavorite)
     }
     
     func favoriteDidChange(game: Game, isFavorite: Bool) {

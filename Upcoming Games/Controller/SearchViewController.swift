@@ -17,7 +17,7 @@ class SearchViewController: UIViewController {
     var presenter: SearchPresenter!
     var filterBy: FilterBy = .all
     var actualQuery = ""
-    weak var delegate: FavoriteChangedOnSearch?
+    weak var delegate: FavoriteChanged?
 
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -51,6 +51,15 @@ class SearchViewController: UIViewController {
     
     func performSearch(){
         presenter.search(query: actualQuery, filterBy: filterBy)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "gameDetailSegue" {
+            let destination = segue.destination as! GameDetailViewController
+            let game = sender as! Game
+            destination.game = game
+            destination.favoriteToggleDelegate = self
+        }
     }
 }
 
@@ -94,7 +103,7 @@ extension SearchViewController : SearchProtocol {
     }
 }
 
-extension SearchViewController : ToggleFavoriteDelegate {
+extension SearchViewController: ToggleFavoriteDelegate, FavoriteChanged {
     func setFavorite(at index: IndexPath, isFavorite: Bool) {
         let game = results[index.row]
         var message = ""
@@ -132,6 +141,19 @@ extension SearchViewController : ToggleFavoriteDelegate {
         self.delegate?.favoriteDidChange(game: game, isFavorite: isFavorite)
         
         self.view.makeToast(message)
+    }
+    
+    func setFavorite(game: Game, isFavorite: Bool) {
+        guard let index = results.firstIndex(of: game) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        self.setFavorite(at: indexPath, isFavorite: isFavorite)
+    }
+    
+    func favoriteDidChange(game: Game, isFavorite: Bool) {
+        guard let index = results.firstIndex(of: game) else { return }
+        let indexPath = IndexPath(row: index, section: 0)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
+        self.delegate?.favoriteDidChange(game: game, isFavorite: isFavorite)
     }
 }
 
@@ -177,8 +199,13 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return results.count
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let game = self.results[indexPath.row]
+        performSegue(withIdentifier: "gameDetailSegue", sender: game)
+    }
 }
 
-protocol FavoriteChangedOnSearch: class {
+protocol FavoriteChanged: class {
     func favoriteDidChange(game: Game, isFavorite: Bool)
 }

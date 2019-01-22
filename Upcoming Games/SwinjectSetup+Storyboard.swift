@@ -55,6 +55,7 @@ extension SwinjectStoryboard {
             let presenter = GameDetailPresenter(view: c)
             presenter.youtubeService = r.resolve(YoutubeService.self)!
             presenter.igdbService = r.resolve(IGDBService.self)!
+            presenter.interactor = r.resolve(GameListInteractor.self)!
             c.presenter = presenter
         }
         

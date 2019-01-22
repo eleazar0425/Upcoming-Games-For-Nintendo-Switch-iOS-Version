@@ -28,7 +28,7 @@ class GameTableViewCell: UITableViewCell {
     
     @IBOutlet weak var favoriteToggle: UIButton?
     
-    var delegate: ToggleFavoriteDelegate!
+    weak var delegate: ToggleFavoriteDelegate!
     var indexPath: IndexPath!
     var favorite: Bool! {
         didSet {
@@ -65,6 +65,7 @@ class GameTableViewCell: UITableViewCell {
     }
 }
 
-protocol ToggleFavoriteDelegate {
+protocol ToggleFavoriteDelegate: class {
     func setFavorite(at index: IndexPath, isFavorite: Bool)
+    func setFavorite(game: Game, isFavorite: Bool)
 }

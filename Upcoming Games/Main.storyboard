@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-1036" y="95"/>
         </scene>
-        <!--Upcoming games-->
+        <!--Switch Library-->
         <scene sceneID="GdY-Mr-BHU">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9C9-RB-W03" customClass="GamesViewController" customModule="Upcoming_Games" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9C9-RB-W03" customClass="GamesViewController" customModule="Switch_Library" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qdI-MT-GrT"/>
                         <viewControllerLayoutGuide type="bottom" id="Tlj-KN-yd4"/>
@@ -45,7 +45,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Upcoming games" id="lxd-1Z-bh9">
+                    <navigationItem key="navigationItem" title="Switch Library" id="lxd-1Z-bh9">
                         <barButtonItem key="leftBarButtonItem" image="searchIcon" style="plain" id="lDg-Rk-MTy">
                             <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
@@ -79,7 +79,7 @@
         <!--Search View Controller-->
         <scene sceneID="Qt0-bh-bCS">
             <objects>
-                <viewController id="a95-nR-Bwu" customClass="SearchViewController" customModule="Upcoming_Games" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="a95-nR-Bwu" customClass="SearchViewController" customModule="Switch_Library" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="743-LN-Hr5"/>
                         <viewControllerLayoutGuide type="bottom" id="2Bv-oe-tQg"/>
@@ -124,7 +124,7 @@
         <!--Game Detail View Controller-->
         <scene sceneID="GV8-op-zK9">
             <objects>
-                <viewController storyboardIdentifier="gameDetailViewController" id="AyP-d4-Rfg" customClass="GameDetailViewController" customModule="Upcoming_Games" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameDetailViewController" id="AyP-d4-Rfg" customClass="GameDetailViewController" customModule="Switch_Library" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="lE5-UU-2nX"/>
                         <viewControllerLayoutGuide type="bottom" id="eC8-WO-S5b"/>
@@ -246,6 +246,6 @@
         <image name="sortIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GJY-tc-h44"/>
+        <segue reference="eRX-iz-KLg"/>
     </inferredMetricsTieBreakers>
 </document>

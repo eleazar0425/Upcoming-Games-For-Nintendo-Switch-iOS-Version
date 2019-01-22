@@ -17,6 +17,7 @@ class GameDetailPresenter {
     var view: GameDetailView
     var youtubeService: YoutubeService!
     var igdbService: IGDBService!
+    var interactor: GameListInteractor!
     
     init(view: GameDetailView){
         self.view = view
@@ -32,5 +33,17 @@ class GameDetailPresenter {
         igdbService.getGameDescription(game: game) { (description, error) in
             self.view.setGameDescription(description: description, error: error)
         }
+    }
+    
+    func saveFavorite(id: String){
+        interactor.saveFavorite(id)
+    }
+    
+    func deleteFavorite(id: String){
+        interactor.deleteFavorite(id)
+    }
+    
+    func isFavorite(id: String) -> Bool {
+        return interactor.isFavorite(id)
     }
 }
