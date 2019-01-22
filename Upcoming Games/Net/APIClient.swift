@@ -16,6 +16,7 @@ class APIClient : Client {
     
     func request(_ routing: URLRequestConvertible, completion: @escaping Client.CompletionHandler) {
         Alamofire.request(routing)
+            .debugLog()
             .validate()
             .responseJSON { response in
                  guard let result = response.value else {
@@ -23,5 +24,14 @@ class APIClient : Client {
                 }
                 completion(JSON(result), nil)
         }
+    }
+}
+
+extension Request {
+    public func debugLog() -> Self {
+        #if DEBUG
+        debugPrint(self)
+        #endif
+        return self
     }
 }

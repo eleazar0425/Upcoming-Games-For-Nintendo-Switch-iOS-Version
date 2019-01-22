@@ -19,6 +19,7 @@ class Game : Object {
     @objc dynamic var numberOfPlayers: String = ""
     @objc dynamic var physicalRelease: Bool = false
     @objc dynamic var salePrice: String = ""
+    @objc dynamic var categories: String = ""
     
 
     convenience init(withJSON json: JSON){
@@ -31,6 +32,15 @@ class Game : Object {
         self.numberOfPlayers = json["number_of_players"].stringValue
         self.physicalRelease = json["buyitnow"].boolValue
         self.salePrice = json["sale_price"].stringValue
+        let categories = json["categories"]["category"]
+        
+        if !categories.stringValue.isEmpty {
+            self.categories = categories.stringValue
+        }else {
+            for category in categories {
+                self.categories += "\(category.1.stringValue) "
+            }
+        }
     }
     
     override class func primaryKey() -> String {
@@ -47,6 +57,7 @@ class Game : Object {
         clon.releaseDate = game.releaseDate
         clon.title = game.title
         clon.salePrice = game.salePrice
+        clon.categories = game.categories
         return clon
     }
 }

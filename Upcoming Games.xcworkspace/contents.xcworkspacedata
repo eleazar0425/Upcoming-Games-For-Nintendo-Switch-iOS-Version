@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Upcoming Games.xcodeproj">
+      location = "group:/Users/eleazarestrella/Desktop/Upcoming-Games-For-Nintendo-Switch-iOS-Version/Switch Library.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

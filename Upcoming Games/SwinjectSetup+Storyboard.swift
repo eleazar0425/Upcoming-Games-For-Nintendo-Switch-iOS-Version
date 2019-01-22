@@ -42,6 +42,21 @@ extension SwinjectStoryboard {
                 gameListInteractor.localDataManager = r.resolve(GameLocalDataManager.self)!
                 gameListInteractor.remoteDataManager = r.resolve(GameRemoteDataManager.self)!
         }
+    
+        defaultContainer.register(YoutubeService.self) { r in
+            YoutubeService(client: r.resolve(Client.self)!)
+        }
+        
+        defaultContainer.register(IGDBService.self) { r in
+            IGDBService(client: r.resolve(Client.self)!)
+        }
+        
+        defaultContainer.storyboardInitCompleted(GameDetailViewController.self) { (r,c) in
+            let presenter = GameDetailPresenter(view: c)
+            presenter.youtubeService = r.resolve(YoutubeService.self)!
+            presenter.igdbService = r.resolve(IGDBService.self)!
+            c.presenter = presenter
+        }
         
         defaultContainer.storyboardInitCompleted(GamesViewController.self) { (r, c) in
             let presenter = GameListPresenter(c)

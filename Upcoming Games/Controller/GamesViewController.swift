@@ -60,9 +60,15 @@ class GamesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! SearchViewController
-        destination.delegate = self
-        destination.games = backup
+        if segue.identifier == "searchSegue" {
+            let destination = segue.destination as! SearchViewController
+            destination.delegate = self
+            destination.games = backup
+        }else if segue.identifier == "gameDetailSegue" {
+            let destination = segue.destination as! GameDetailViewController
+            let game = sender as! Game
+            destination.game = game
+        }
     }
     
     func prepareActivityIndicator(){
@@ -142,13 +148,12 @@ class GamesViewController: UIViewController {
     }
 }
 
-
 extension GamesViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //TODO
+        let game = self.games[indexPath.row]
+        performSegue(withIdentifier: "gameDetailSegue", sender: game)
     }
 }
-
 
 extension GamesViewController : UITableViewDataSource {
 

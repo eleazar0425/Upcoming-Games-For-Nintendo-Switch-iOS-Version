@@ -13,6 +13,7 @@ PODS:
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
   - Toast-Swift (4.0.1)
+  - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
   - Alamofire
@@ -23,6 +24,7 @@ DEPENDENCIES:
   - Swinject
   - SwinjectStoryboard
   - Toast-Swift
+  - YouTubePlayer
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - Swinject
     - SwinjectStoryboard
     - Toast-Swift
+    - YouTubePlayer
 
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
@@ -46,7 +49,8 @@ SPEC CHECKSUMS:
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 297be16eba7d23c6b0c7715121151c48967263f4
+PODFILE CHECKSUM: 92afe7ffdea35dc07b1ff3dfc317c568915351e5
 
 COCOAPODS: 1.5.3
