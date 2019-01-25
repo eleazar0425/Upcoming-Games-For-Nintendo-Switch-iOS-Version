@@ -10,6 +10,7 @@ import UIKit
 import Toast_Swift
 import UserNotifications
 import HGPlaceholders
+import SwiftEventBus
 
 class GamesViewController: UIViewController {
 
@@ -48,10 +49,17 @@ class GamesViewController: UIViewController {
         let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
         
+        SwiftEventBus.onMainThread(self, name: "favoritesUpdate") { result in
+            let event = result?.object as! FavoriteEvent
+            guard let index = self.games.firstIndex(of: event.game) else { return }
+            self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
+        }
+        
         prepareActivityIndicator()
         //activityIndicator.startAnimating()
         tableView.showLoadingPlaceholder()
         presenter.getGameList()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,15 +68,10 @@ class GamesViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "searchSegue" {
-            let destination = segue.destination as! SearchViewController
-            destination.delegate = self
-            destination.games = backup
-        }else if segue.identifier == "gameDetailSegue" {
+        if segue.identifier == "gameDetailSegue" {
             let destination = segue.destination as! GameDetailViewController
             let game = sender as! Game
             destination.game = game
-            destination.favoriteToggleDelegate = self
         }
     }
     
@@ -211,7 +214,7 @@ extension GamesViewController : UITableViewDataSource {
     }
 }
 
-extension GamesViewController: ToggleFavoriteDelegate, FavoriteChanged {
+extension GamesViewController: ToggleFavoriteDelegate {
     func setFavorite(at index: IndexPath, isFavorite: Bool) {
         let game = games[index.row]
         var message = ""
@@ -246,6 +249,8 @@ extension GamesViewController: ToggleFavoriteDelegate, FavoriteChanged {
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["FavoriteGameReleasedNotification-\(game.id)"])
         }
         
+        SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: isFavorite))
+        
         self.view.makeToast(message)
     }
     
@@ -253,11 +258,6 @@ extension GamesViewController: ToggleFavoriteDelegate, FavoriteChanged {
         guard let index = games.firstIndex(of: game) else { return }
         let indexPath = IndexPath(row: index, section: 0)
         self.setFavorite(at: indexPath, isFavorite: isFavorite)
-    }
-    
-    func favoriteDidChange(game: Game, isFavorite: Bool) {
-        guard let index = games.firstIndex(of: game) else { return }
-        tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
     }
 }
 
@@ -286,6 +286,10 @@ extension GamesViewController : GameListProtocol {
         refreshControl.endRefreshing()
         order(by: orderByState)
         filter(by: filterState)
+        
+        let searchController = (self.tabBarController?.viewControllers?[1] as! UINavigationController).viewControllers[0] as! SearchViewController
+        
+        searchController.games = self.games
     }
     
     func showErrorMessage(){

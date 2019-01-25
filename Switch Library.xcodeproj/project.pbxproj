@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		015FCF528F3DED1CB19976F4 /* Pods_Upcoming_Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */; };
 		10014FC221EFB5E5000FE29C /* GameViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10014FC121EFB5E4000FE29C /* GameViewCell.xib */; };
+		102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */; };
 		10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */; };
 		10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B121F7713500D9AF59 /* YoutubeService.swift */; };
 		10B1A4B421F771B900D9AF59 /* YoutubeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */; };
@@ -40,16 +41,19 @@
 		20A144B31F1CF285005CCDC7 /* GameLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */; };
 		20A144B51F1CF2F3005CCDC7 /* GameRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B41F1CF2F3005CCDC7 /* GameRemoteDataManager.swift */; };
 		20A144B71F1CF546005CCDC7 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B61F1CF546005CCDC7 /* GameService.swift */; };
+		63E3A5CB4F79DB66F6790F54 /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10014FC121EFB5E4000FE29C /* GameViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewCell.xib; sourceTree = "<group>"; };
+		102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvent.swift; sourceTree = "<group>"; };
 		10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		10B1A4B121F7713500D9AF59 /* YoutubeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeService.swift; sourceTree = "<group>"; };
 		10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRouter.swift; sourceTree = "<group>"; };
 		10B1A4B621F775FE00D9AF59 /* GameDetailContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailContract.swift; sourceTree = "<group>"; };
 		10B1A4BA21F78D3300D9AF59 /* IGDBRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBRouter.swift; sourceTree = "<group>"; };
 		10B1A4BC21F78FB000D9AF59 /* IGDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBService.swift; sourceTree = "<group>"; };
+		10C2495F21FA0DAC0039EF19 /* Switch-Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Switch-Library-Bridging-Header.h"; sourceTree = "<group>"; };
 		202D9E2A1F1D562E00B1E06E /* GameListContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListContract.swift; sourceTree = "<group>"; };
 		202D9E2C1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectSetup+Storyboard.swift"; sourceTree = "<group>"; };
 		202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -77,9 +81,12 @@
 		20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLocalDataManager.swift; sourceTree = "<group>"; };
 		20A144B41F1CF2F3005CCDC7 /* GameRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRemoteDataManager.swift; sourceTree = "<group>"; };
 		20A144B61F1CF546005CCDC7 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library.release.xcconfig"; sourceTree = "<group>"; };
 		5B328F327ADA25FCE1CE43E9 /* Pods-Upcoming Games.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Upcoming Games.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Upcoming Games/Pods-Upcoming Games.debug.xcconfig"; sourceTree = "<group>"; };
 		706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Upcoming_Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switch_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE214D239BBEDFFE63A674B2 /* Pods-Upcoming Games.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Upcoming Games.release.xcconfig"; path = "Pods/Target Support Files/Pods-Upcoming Games/Pods-Upcoming Games.release.xcconfig"; sourceTree = "<group>"; };
+		F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +95,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				015FCF528F3DED1CB19976F4 /* Pods_Upcoming_Games.framework in Frameworks */,
+				63E3A5CB4F79DB66F6790F54 /* Pods_Switch_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +179,7 @@
 				20A144821F190D6F005CCDC7 /* Info.plist */,
 				20A144881F190DD9005CCDC7 /* Main.storyboard */,
 				202D9E2C1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift */,
+				10C2495F21FA0DAC0039EF19 /* Switch-Library-Bridging-Header.h */,
 			);
 			path = "Upcoming Games";
 			sourceTree = "<group>";
@@ -203,6 +212,7 @@
 				202D9E311F27E13000B1E06E /* OrderBy.swift */,
 				202D9E331F2A796C00B1E06E /* FilterBy.swift */,
 				20698CCD1F4DCDB3006C6A6A /* Favorite.swift */,
+				102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +295,8 @@
 			children = (
 				5B328F327ADA25FCE1CE43E9 /* Pods-Upcoming Games.debug.xcconfig */,
 				AE214D239BBEDFFE63A674B2 /* Pods-Upcoming Games.release.xcconfig */,
+				F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */,
+				31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -293,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */,
+				93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -385,7 +398,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Upcoming Games-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Switch Library-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -398,12 +411,13 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Upcoming Games/Pods-Upcoming Games-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
@@ -417,6 +431,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEventBus.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
@@ -425,7 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Upcoming Games/Pods-Upcoming Games-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -449,6 +464,7 @@
 				2099466D1F4B357F001F5FA4 /* SearchContract.swift in Sources */,
 				20A1449D1F1CE6FA005CCDC7 /* UIImageView+AlamofireImage.swift in Sources */,
 				10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */,
+				102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */,
 				20698CCE1F4DCDB3006C6A6A /* Favorite.swift in Sources */,
 				20A144A01F1CE8CA005CCDC7 /* Client.swift in Sources */,
 				20A144971F1947E7005CCDC7 /* GamesViewController.swift in Sources */,
@@ -583,7 +599,7 @@
 		};
 		20A144861F190D6F005CCDC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B328F327ADA25FCE1CE43E9 /* Pods-Upcoming Games.debug.xcconfig */;
+			baseConfigurationReference = F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AUW9773P92;
@@ -591,6 +607,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Upcoming-Games";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/eleazarestrella/Desktop/Upcoming-Games-For-Nintendo-Switch-iOS-Version/Upcoming Games/Switch-Library-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};
@@ -598,7 +615,7 @@
 		};
 		20A144871F190D6F005CCDC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AE214D239BBEDFFE63A674B2 /* Pods-Upcoming Games.release.xcconfig */;
+			baseConfigurationReference = 31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = AUW9773P92;
@@ -606,6 +623,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Upcoming-Games";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/eleazarestrella/Desktop/Upcoming-Games-For-Nintendo-Switch-iOS-Version/Upcoming Games/Switch-Library-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.2;
 			};

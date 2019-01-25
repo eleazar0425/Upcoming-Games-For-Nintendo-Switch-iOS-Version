@@ -8,6 +8,7 @@ PODS:
   - Realm/Headers (3.12.0)
   - RealmSwift (3.12.0):
     - Realm (= 3.12.0)
+  - SwiftEventBus (2.1.2)
   - SwiftyJSON (4.2.0)
   - Swinject (2.5.0)
   - SwinjectStoryboard (2.1.0):
@@ -20,6 +21,7 @@ DEPENDENCIES:
   - AlamofireImage
   - HGPlaceholders
   - RealmSwift
+  - SwiftEventBus
   - SwiftyJSON
   - Swinject
   - SwinjectStoryboard
@@ -33,6 +35,7 @@ SPEC REPOS:
     - HGPlaceholders
     - Realm
     - RealmSwift
+    - SwiftEventBus
     - SwiftyJSON
     - Swinject
     - SwinjectStoryboard
@@ -45,12 +48,13 @@ SPEC CHECKSUMS:
   HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
+  SwiftEventBus: 9e8f6d8cff2826d66536ec367d17a47299478aa0
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 92afe7ffdea35dc07b1ff3dfc317c568915351e5
+PODFILE CHECKSUM: 61d090b645b3c0fb3bf7e7b09b1bb2ce7ced9a12
 
 COCOAPODS: 1.5.3

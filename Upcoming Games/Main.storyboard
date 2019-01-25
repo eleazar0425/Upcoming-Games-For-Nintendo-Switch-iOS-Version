@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Iwh-0h-VZ0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="F1z-1g-beN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,26 +9,32 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="k22-jn-lVN">
+        <!--Tab Bar Controller-->
+        <scene sceneID="wXJ-qf-Pff">
             <objects>
-                <navigationController id="Iwh-0h-VZ0" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4LC-nj-ioU">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                <tabBarController id="F1z-1g-beN" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kZ7-8d-MeP"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NFR-tt-UKZ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </tabBar>
                     <connections>
-                        <segue destination="9C9-RB-W03" kind="relationship" relationship="rootViewController" id="aI8-ze-B9a"/>
+                        <segue destination="TNB-Ei-Taq" kind="relationship" relationship="viewControllers" id="QV8-Wi-hrj"/>
+                        <segue destination="pNJ-6Y-H7e" kind="relationship" relationship="viewControllers" id="37w-ZH-HsY"/>
+                        <segue destination="tsC-7v-ZQC" kind="relationship" relationship="viewControllers" id="ng0-AC-Dea"/>
+                        <segue destination="tmE-wZ-GpL" kind="relationship" relationship="viewControllers" id="crB-Nx-Bfd"/>
                     </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="PI4-i1-BpX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bd2-Rd-vyn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1036" y="95"/>
+            <point key="canvasLocation" x="-25" y="95"/>
         </scene>
         <!--Switch Library-->
         <scene sceneID="GdY-Mr-BHU">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="9C9-RB-W03" customClass="GamesViewController" customModule="Switch_Library" sceneMemberID="viewController">
+                <viewController title="Switch Library" automaticallyAdjustsScrollViewInsets="NO" id="9C9-RB-W03" customClass="GamesViewController" customModule="Switch_Library" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qdI-MT-GrT"/>
                         <viewControllerLayoutGuide type="bottom" id="Tlj-KN-yd4"/>
@@ -46,12 +52,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Switch Library" id="lxd-1Z-bh9">
-                        <barButtonItem key="leftBarButtonItem" image="searchIcon" style="plain" id="lDg-Rk-MTy">
-                            <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <segue destination="a95-nR-Bwu" kind="show" identifier="searchSegue" id="zdT-z1-pHC"/>
-                            </connections>
-                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="filterIcon" id="FdK-8X-xKN">
                                 <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -74,12 +74,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="64l-1L-IfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-66.400000000000006" y="94.902548725637189"/>
+            <point key="canvasLocation" x="-1055" y="1588"/>
         </scene>
-        <!--Search View Controller-->
+        <!--Search Game-->
         <scene sceneID="Qt0-bh-bCS">
             <objects>
-                <viewController id="a95-nR-Bwu" customClass="SearchViewController" customModule="Switch_Library" sceneMemberID="viewController">
+                <viewController title="Search Game" id="a95-nR-Bwu" customClass="SearchViewController" customModule="Switch_Library" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="743-LN-Hr5"/>
                         <viewControllerLayoutGuide type="bottom" id="2Bv-oe-tQg"/>
@@ -96,7 +96,7 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cmU-UO-Zec">
-                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="498"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -111,6 +111,7 @@
                             <constraint firstAttribute="trailing" secondItem="gVp-Nq-5NR" secondAttribute="trailing" id="dSv-nR-ie7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Search game" id="J6h-xJ-jcO"/>
                     <connections>
                         <outlet property="searchBar" destination="gVp-Nq-5NR" id="TSn-kF-Omh"/>
                         <outlet property="tableView" destination="cmU-UO-Zec" id="ldD-9I-QD9"/>
@@ -119,7 +120,45 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vOR-01-bWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="737" y="95"/>
+            <point key="canvasLocation" x="-26" y="1587"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="faP-oi-1JI">
+            <objects>
+                <viewController id="tsC-7v-ZQC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KJC-ch-D58"/>
+                        <viewControllerLayoutGuide type="bottom" id="kvn-LK-oEW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jy7-4w-Yve">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="favoriteIcon" id="54d-Rs-PD1"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHx-c9-yoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1033" y="883"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="mH4-DV-MxO">
+            <objects>
+                <viewController id="tmE-wZ-GpL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mor-FF-Ewe"/>
+                        <viewControllerLayoutGuide type="bottom" id="KTc-Hv-MGC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YXc-Gy-rNo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsIcon" id="ldw-C3-Thi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hCy-de-RSV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1990" y="883"/>
         </scene>
         <!--Game Detail View Controller-->
         <scene sceneID="GV8-op-zK9">
@@ -141,7 +180,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfi-Nx-Pdv">
-                                <rect key="frame" x="31" y="540" width="313" height="127"/>
+                                <rect key="frame" x="31" y="540" width="313" height="78"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -169,7 +208,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="QX0-k8-ONa">
-                                        <rect key="frame" x="141.5" y="95" width="62" height="17"/>
+                                        <rect key="frame" x="159" y="95" width="27.5" height="17"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mW8-rD-Dfm">
                                                 <rect key="frame" x="0.0" y="0.0" width="27.5" height="17"/>
@@ -177,8 +216,8 @@
                                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgW-qN-b7g">
-                                                <rect key="frame" x="34.5" y="0.0" width="27.5" height="17"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgW-qN-b7g">
+                                                <rect key="frame" x="0.0" y="0.0" width="0.0" height="17"/>
                                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -237,12 +276,53 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EAT-1q-UOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533.5999999999999" y="94.902548725637189"/>
+            <point key="canvasLocation" x="-535" y="2435"/>
+        </scene>
+        <!--Library-->
+        <scene sceneID="CSX-ul-gk4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TNB-Ei-Taq" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Library" image="gamesIcon" id="Hvb-Ch-ItB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aei-SH-ety">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9C9-RB-W03" kind="relationship" relationship="rootViewController" id="xsS-MU-OdK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXT-M0-iPq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1055.2" y="882.90854572713647"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="C03-4x-dyx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pNJ-6Y-H7e" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="searchIcon" id="s2n-K3-1Rh"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ALX-gJ-dvS">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a95-nR-Bwu" kind="relationship" relationship="rootViewController" id="RJ3-wM-kWL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1G-Sn-LDO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-26" y="883"/>
         </scene>
     </scenes>
     <resources>
+        <image name="favoriteIcon" width="48" height="48"/>
         <image name="filterIcon" width="27" height="27"/>
+        <image name="gamesIcon" width="48" height="48"/>
         <image name="searchIcon" width="48" height="48"/>
+        <image name="settingsIcon" width="48" height="48"/>
         <image name="sortIcon" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>

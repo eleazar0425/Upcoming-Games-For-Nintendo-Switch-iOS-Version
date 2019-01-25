@@ -9,6 +9,7 @@
 import UIKit
 import Toast_Swift
 import UserNotifications
+import SwiftEventBus
 
 class SearchViewController: UIViewController {
     
@@ -17,8 +18,7 @@ class SearchViewController: UIViewController {
     var presenter: SearchPresenter!
     var filterBy: FilterBy = .all
     var actualQuery = ""
-    weak var delegate: FavoriteChanged?
-
+    
     @IBOutlet weak var searchBar: UISearchBar!
     
     @IBOutlet weak var tableView: UITableView!
@@ -27,13 +27,22 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+
+        SwiftEventBus.onMainThread(self, name: "favoritesUpdate") { result in
+            let event = result?.object as! FavoriteEvent
+            guard let index = self.results.firstIndex(of: event.game) else { return }
+            let indexPath = IndexPath(row: index, section: 0)
+            self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        }
+
         self.searchBar.delegate = self
         self.tableView.delegate = self
         self.tableView.dataSource = self
         let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
         
+        self.searchBar.tintColor = UIColor.orange
+        self.searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
         self.searchBar.scopeButtonTitles = ["All", "Digital", "Physical"]
         
         self.searchBar.becomeFirstResponder()
@@ -58,7 +67,6 @@ class SearchViewController: UIViewController {
             let destination = segue.destination as! GameDetailViewController
             let game = sender as! Game
             destination.game = game
-            destination.favoriteToggleDelegate = self
         }
     }
 }
@@ -103,7 +111,7 @@ extension SearchViewController : SearchProtocol {
     }
 }
 
-extension SearchViewController: ToggleFavoriteDelegate, FavoriteChanged {
+extension SearchViewController: ToggleFavoriteDelegate {
     func setFavorite(at index: IndexPath, isFavorite: Bool) {
         let game = results[index.row]
         var message = ""
@@ -137,8 +145,8 @@ extension SearchViewController: ToggleFavoriteDelegate, FavoriteChanged {
             message = "\(game.title) has been removed from favorites"
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["FavoriteGameReleasedNotification-\(game.id)"])
         }
-        
-        self.delegate?.favoriteDidChange(game: game, isFavorite: isFavorite)
+
+        SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: isFavorite))
         
         self.view.makeToast(message)
     }
@@ -147,13 +155,6 @@ extension SearchViewController: ToggleFavoriteDelegate, FavoriteChanged {
         guard let index = results.firstIndex(of: game) else { return }
         let indexPath = IndexPath(row: index, section: 0)
         self.setFavorite(at: indexPath, isFavorite: isFavorite)
-    }
-    
-    func favoriteDidChange(game: Game, isFavorite: Bool) {
-        guard let index = results.firstIndex(of: game) else { return }
-        let indexPath = IndexPath(row: index, section: 0)
-        tableView.reloadRows(at: [indexPath], with: .automatic)
-        self.delegate?.favoriteDidChange(game: game, isFavorite: isFavorite)
     }
 }
 
@@ -204,8 +205,4 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         let game = self.results[indexPath.row]
         performSegue(withIdentifier: "gameDetailSegue", sender: game)
     }
-}
-
-protocol FavoriteChanged: class {
-    func favoriteDidChange(game: Game, isFavorite: Bool)
 }

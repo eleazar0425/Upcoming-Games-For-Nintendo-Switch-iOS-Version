@@ -8,6 +8,7 @@
 
 import UIKit
 import YouTubePlayer
+import SwiftEventBus
 
 class GameDetailViewController: UIViewController {
 
@@ -22,20 +23,26 @@ class GameDetailViewController: UIViewController {
     
     var game: Game!
     var presenter: GameDetailPresenter!
-    weak var favoriteToggleDelegate: FavoriteChanged!
     
     @objc let favoriteToggle = UIButton(type: .custom)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let _ = game, let _ = presenter, let _ = favoriteToggleDelegate else {
+        guard let _ = game, let _ = presenter else {
             fatalError("You must set the 'game' and 'presenter' property in order to use this view controller ")
         }
         
+        SwiftEventBus.onMainThread(self, name: "favoritesUpdate") { result in
+            let event = result?.object as! FavoriteEvent
+            if self.game.id == event.game.id {
+                self.favoriteToggle.isSelected = event.isFavorite
+            }
+        }
+        
         favoriteToggle.isSelected = false
-        favoriteToggle.setImage(#imageLiteral(resourceName: "favoriteIcon"), for : .selected)
-        favoriteToggle.setImage(#imageLiteral(resourceName: "notFavoriteIcon"), for: .normal)
+        favoriteToggle.setImage(#imageLiteral(resourceName: "favoriteIcon").withRenderingMode(.alwaysOriginal), for : .selected)
+        favoriteToggle.setImage(#imageLiteral(resourceName: "notFavoriteIcon").withRenderingMode(.alwaysOriginal), for: .normal)
         favoriteToggle.contentMode = .scaleToFill
         favoriteToggle.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
         favoriteToggle.translatesAutoresizingMaskIntoConstraints = false
@@ -75,7 +82,7 @@ class GameDetailViewController: UIViewController {
         }else{
             presenter.deleteFavorite(id: self.game.id)
         }
-        favoriteToggleDelegate.favoriteDidChange(game: self.game, isFavorite: favoriteToggle.isSelected)
+        SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: favoriteToggle.isSelected))
     }
 }
 

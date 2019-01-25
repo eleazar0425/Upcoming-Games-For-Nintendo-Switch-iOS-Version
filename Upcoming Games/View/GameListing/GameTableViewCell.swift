@@ -51,8 +51,8 @@ class GameTableViewCell: UITableViewCell {
         // Initialization code
         
         favoriteToggle?.isSelected = false
-        favoriteToggle?.setImage(#imageLiteral(resourceName: "favoriteIcon"), for : .selected)
-        favoriteToggle?.setImage(#imageLiteral(resourceName: "notFavoriteIcon"), for: .normal)
+        favoriteToggle?.setImage(#imageLiteral(resourceName: "favoriteIcon").withRenderingMode(.alwaysOriginal), for : .selected)
+        favoriteToggle?.setImage(#imageLiteral(resourceName: "notFavoriteIcon").withRenderingMode(.alwaysOriginal), for: .normal)
         
     }
     @IBAction func toggleFavoriteAction(_ sender: Any) {
