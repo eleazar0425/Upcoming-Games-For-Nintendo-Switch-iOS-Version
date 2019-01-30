@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		015FCF528F3DED1CB19976F4 /* Pods_Upcoming_Games.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */; };
 		10014FC221EFB5E5000FE29C /* GameViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10014FC121EFB5E4000FE29C /* GameViewCell.xib */; };
+		1002803C2201E2BB00AB95AD /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002803B2201E2BB00AB95AD /* Notification.swift */; };
+		1002803F2201E8D600AB95AD /* GamesEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002803E2201E8D600AB95AD /* GamesEvent.swift */; };
 		102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */; };
+		102FD4282201071400A701B6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4272201071400A701B6 /* NotificationTableViewCell.swift */; };
+		102FD42A2201081500A701B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4292201081500A701B6 /* NotificationViewController.swift */; };
 		10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */; };
 		10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B121F7713500D9AF59 /* YoutubeService.swift */; };
 		10B1A4B421F771B900D9AF59 /* YoutubeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */; };
@@ -41,12 +44,16 @@
 		20A144B31F1CF285005CCDC7 /* GameLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */; };
 		20A144B51F1CF2F3005CCDC7 /* GameRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B41F1CF2F3005CCDC7 /* GameRemoteDataManager.swift */; };
 		20A144B71F1CF546005CCDC7 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B61F1CF546005CCDC7 /* GameService.swift */; };
-		63E3A5CB4F79DB66F6790F54 /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */; };
+		55F610CB8BA2CB6CE5242A28 /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		10014FC121EFB5E4000FE29C /* GameViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewCell.xib; sourceTree = "<group>"; };
+		1002803B2201E2BB00AB95AD /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		1002803E2201E8D600AB95AD /* GamesEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesEvent.swift; sourceTree = "<group>"; };
 		102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvent.swift; sourceTree = "<group>"; };
+		102FD4272201071400A701B6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		102FD4292201081500A701B6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		10B1A4B121F7713500D9AF59 /* YoutubeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeService.swift; sourceTree = "<group>"; };
 		10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRouter.swift; sourceTree = "<group>"; };
@@ -94,8 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				015FCF528F3DED1CB19976F4 /* Pods_Upcoming_Games.framework in Frameworks */,
-				63E3A5CB4F79DB66F6790F54 /* Pods_Switch_Library.framework in Frameworks */,
+				55F610CB8BA2CB6CE5242A28 /* Pods_Switch_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +114,15 @@
 				10014FC121EFB5E4000FE29C /* GameViewCell.xib */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		102FD426220106F600A701B6 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+				102FD4272201071400A701B6 /* NotificationTableViewCell.swift */,
+				102FD4292201081500A701B6 /* NotificationViewController.swift */,
+			);
+			path = Notifications;
 			sourceTree = "<group>";
 		};
 		10B1A4B521F775F000D9AF59 /* GameDetail */ = {
@@ -187,6 +202,7 @@
 		20A1448A1F191212005CCDC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				102FD426220106F600A701B6 /* Notifications */,
 				10B1A4B521F775F000D9AF59 /* GameDetail */,
 				10014FC021EFB5CA000FE29C /* Common */,
 				2099466B1F4B3570001F5FA4 /* Search */,
@@ -213,6 +229,8 @@
 				202D9E331F2A796C00B1E06E /* FilterBy.swift */,
 				20698CCD1F4DCDB3006C6A6A /* Favorite.swift */,
 				102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */,
+				1002803B2201E2BB00AB95AD /* Notification.swift */,
+				1002803E2201E8D600AB95AD /* GamesEvent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -452,11 +470,13 @@
 			files = (
 				10B1A4B421F771B900D9AF59 /* YoutubeRouter.swift in Sources */,
 				20A144A91F1CEBB4005CCDC7 /* GameRouter.swift in Sources */,
+				102FD42A2201081500A701B6 /* NotificationViewController.swift in Sources */,
 				10B1A4B721F775FE00D9AF59 /* GameDetailContract.swift in Sources */,
 				20A144B71F1CF546005CCDC7 /* GameService.swift in Sources */,
 				20A144AC1F1CEED9005CCDC7 /* GameListInteractor.swift in Sources */,
 				20A144A21F1CE8EB005CCDC7 /* ServiceError.swift in Sources */,
 				10B1A4BD21F78FB000D9AF59 /* IGDBService.swift in Sources */,
+				1002803C2201E2BB00AB95AD /* Notification.swift in Sources */,
 				10B1A4BB21F78D3300D9AF59 /* IGDBRouter.swift in Sources */,
 				20A144B51F1CF2F3005CCDC7 /* GameRemoteDataManager.swift in Sources */,
 				202D9E301F20DF7F00B1E06E /* DateUtil.swift in Sources */,
@@ -474,12 +494,14 @@
 				20A144771F190D6F005CCDC7 /* AppDelegate.swift in Sources */,
 				20A1448D1F19125B005CCDC7 /* GameTableViewCell.swift in Sources */,
 				20A1449A1F1CE164005CCDC7 /* Reachability.swift in Sources */,
+				1002803F2201E8D600AB95AD /* GamesEvent.swift in Sources */,
 				202D9E2B1F1D562E00B1E06E /* GameListContract.swift in Sources */,
 				20A144931F1918CA005CCDC7 /* Game.swift in Sources */,
 				20698CD01F4DCFC9006C6A6A /* FavoriteUtil.swift in Sources */,
 				20A144A61F1CE9AA005CCDC7 /* APIClient.swift in Sources */,
 				20A144B31F1CF285005CCDC7 /* GameLocalDataManager.swift in Sources */,
 				202D9E321F27E13000B1E06E /* OrderBy.swift in Sources */,
+				102FD4282201071400A701B6 /* NotificationTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

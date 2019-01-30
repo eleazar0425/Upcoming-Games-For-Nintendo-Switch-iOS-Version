@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-class Game : Object {
+class Game : Object, Codable {
     @objc dynamic var id: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var releaseDate: String = ""

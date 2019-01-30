@@ -46,6 +46,8 @@ class GameTableViewCell: UITableViewCell {
         }
     }
     
+    let impact = UIImpactFeedbackGenerator()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -58,6 +60,7 @@ class GameTableViewCell: UITableViewCell {
     @IBAction func toggleFavoriteAction(_ sender: Any) {
         delegate?.setFavorite(at: indexPath, isFavorite: !favorite)
         favorite = !favorite
+        impact.impactOccurred()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

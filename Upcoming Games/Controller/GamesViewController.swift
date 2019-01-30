@@ -49,6 +49,8 @@ class GamesViewController: UIViewController {
         let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
         
+        registerForPreviewing(with: self, sourceView: tableView)
+        
         SwiftEventBus.onMainThread(self, name: "favoritesUpdate") { result in
             let event = result?.object as! FavoriteEvent
             guard let index = self.games.firstIndex(of: event.game) else { return }
@@ -225,6 +227,10 @@ extension GamesViewController: ToggleFavoriteDelegate {
             content.title = "Beep, boop!"
             content.body = "\(game.title) is releasing today!"
             content.sound = UNNotificationSound.default
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try! jsonEncoder.encode(game)
+            let json = String(data: jsonData, encoding: String.Encoding.utf8)
+            content.userInfo = ["game": json ?? "", "notificationType": "releasedGame"]
             
             let releaseDate = DateUtil.parse(from: game.releaseDate)!
             
@@ -237,6 +243,7 @@ extension GamesViewController: ToggleFavoriteDelegate {
             let identifier = "FavoriteGameReleasedNotification-\(game.id)"
             let request = UNNotificationRequest(identifier: identifier,
                                                 content: content, trigger: trigger)
+            
             let center = UNUserNotificationCenter.current()
             center.add(request, withCompletionHandler: { (error) in
                 if error != nil {
@@ -289,7 +296,10 @@ extension GamesViewController : GameListProtocol {
         
         let searchController = (self.tabBarController?.viewControllers?[1] as! UINavigationController).viewControllers[0] as! SearchViewController
         
+        let notificationController = (self.tabBarController?.viewControllers?[2] as! UINavigationController).viewControllers[0] as! NotificationViewController
+        
         searchController.games = self.games
+        notificationController.games = self.games
     }
     
     func showErrorMessage(){
@@ -371,5 +381,18 @@ extension GamesViewController: PlaceholderDelegate {
         default:
             return
         }
+    }
+}
+
+extension GamesViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as! GameDetailViewController
+        viewController.game = self.games[indexPath.row]
+        return viewController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }

@@ -71,8 +71,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
                 if interactor.isFavorite(game.id), !game.salePrice.isEmpty {
                     let content = UNMutableNotificationContent()
                     content.title = "Beep, boop!"
-                    content.body = "\(game.title) has a price discount to \(game.salePrice) on the eShop now!"
+                    content.body = "\(game.title) has a price discount to $\(game.salePrice) on the eShop now!"
                     content.sound = UNNotificationSound.default
+                    let jsonEncoder = JSONEncoder()
+                    let jsonData = try! jsonEncoder.encode(game)
+                    let json = String(data: jsonData, encoding: String.Encoding.utf8)
+                    content.userInfo = ["game": json ?? "", "notificationType": "discount"]
+                    
                     let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
                                                                     repeats: false)
                     let identifier = "FavoriteGameDiscountNotification-\(game.id)"
@@ -88,6 +93,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             completionHandler(.newData)
         }
+    }
+    
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        print("\(userInfo)")
     }
 }
 

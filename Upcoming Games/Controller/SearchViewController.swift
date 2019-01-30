@@ -40,6 +40,7 @@ class SearchViewController: UIViewController {
         self.tableView.dataSource = self
         let nib = UINib.init(nibName: "GameViewCell", bundle: nil)
         self.tableView.register(nib, forCellReuseIdentifier: "GameCellIdentifier")
+        registerForPreviewing(with: self, sourceView: tableView)
         
         self.searchBar.tintColor = UIColor.orange
         self.searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
@@ -122,6 +123,10 @@ extension SearchViewController: ToggleFavoriteDelegate {
             content.title = "Beep, boop!"
             content.body = "\(game.title) is releasing today!"
             content.sound = UNNotificationSound.default
+            let jsonEncoder = JSONEncoder()
+            let jsonData = try! jsonEncoder.encode(game)
+            let json = String(data: jsonData, encoding: String.Encoding.utf8)
+            content.userInfo = ["game": json ?? "", "notificationType": "releasedGame"]
             
             let releaseDate = DateUtil.parse(from: game.releaseDate)!
             
@@ -204,5 +209,18 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let game = self.results[indexPath.row]
         performSegue(withIdentifier: "gameDetailSegue", sender: game)
+    }
+}
+
+extension SearchViewController: UIViewControllerPreviewingDelegate {
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as! GameDetailViewController
+        viewController.game = self.results[indexPath.row]
+        return viewController
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        navigationController?.pushViewController(viewControllerToCommit, animated: true)
     }
 }

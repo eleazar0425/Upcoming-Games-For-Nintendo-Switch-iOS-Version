@@ -23,6 +23,7 @@ class GameDetailViewController: UIViewController {
     
     var game: Game!
     var presenter: GameDetailPresenter!
+    let impact = UIImpactFeedbackGenerator()
     
     @objc let favoriteToggle = UIButton(type: .custom)
     
@@ -76,6 +77,7 @@ class GameDetailViewController: UIViewController {
     }
     
     @objc func favoriteToggleAction() {
+        impact.impactOccurred()
         favoriteToggle.isSelected = !favoriteToggle.isSelected
         if favoriteToggle.isSelected {
             presenter.saveFavorite(id: self.game.id)
