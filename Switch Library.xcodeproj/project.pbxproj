@@ -10,6 +10,8 @@
 		10014FC221EFB5E5000FE29C /* GameViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 10014FC121EFB5E4000FE29C /* GameViewCell.xib */; };
 		1002803C2201E2BB00AB95AD /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002803B2201E2BB00AB95AD /* Notification.swift */; };
 		1002803F2201E8D600AB95AD /* GamesEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1002803E2201E8D600AB95AD /* GamesEvent.swift */; };
+		10028042220219BF00AB95AD /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10028041220219BF00AB95AD /* SettingsViewController.swift */; };
+		100280452202350D00AB95AD /* LocalNotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100280442202350D00AB95AD /* LocalNotificationUtil.swift */; };
 		102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */; };
 		102FD4282201071400A701B6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4272201071400A701B6 /* NotificationTableViewCell.swift */; };
 		102FD42A2201081500A701B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4292201081500A701B6 /* NotificationViewController.swift */; };
@@ -51,6 +53,9 @@
 		10014FC121EFB5E4000FE29C /* GameViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewCell.xib; sourceTree = "<group>"; };
 		1002803B2201E2BB00AB95AD /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		1002803E2201E8D600AB95AD /* GamesEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesEvent.swift; sourceTree = "<group>"; };
+		10028041220219BF00AB95AD /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		100280432202260700AB95AD /* Switch Library.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Switch Library.entitlements"; sourceTree = "<group>"; };
+		100280442202350D00AB95AD /* LocalNotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalNotificationUtil.swift; sourceTree = "<group>"; };
 		102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvent.swift; sourceTree = "<group>"; };
 		102FD4272201071400A701B6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		102FD4292201081500A701B6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +121,14 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		100280402202199F00AB95AD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				10028041220219BF00AB95AD /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		102FD426220106F600A701B6 /* Notifications */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +160,7 @@
 			children = (
 				202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */,
 				20698CCF1F4DCFC9006C6A6A /* FavoriteUtil.swift */,
+				100280442202350D00AB95AD /* LocalNotificationUtil.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -162,6 +176,7 @@
 		20A1446A1F190D6F005CCDC7 = {
 			isa = PBXGroup;
 			children = (
+				100280432202260700AB95AD /* Switch Library.entitlements */,
 				20A144751F190D6F005CCDC7 /* Upcoming Games */,
 				20A144741F190D6F005CCDC7 /* Products */,
 				53599F68C28E1DBEF76046BD /* Pods */,
@@ -202,6 +217,7 @@
 		20A1448A1F191212005CCDC7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				100280402202199F00AB95AD /* Settings */,
 				102FD426220106F600A701B6 /* Notifications */,
 				10B1A4B521F775F000D9AF59 /* GameDetail */,
 				10014FC021EFB5CA000FE29C /* Common */,
@@ -369,6 +385,12 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
 						};
 					};
 				};
@@ -436,6 +458,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
@@ -450,6 +473,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEventBus.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
@@ -482,6 +506,7 @@
 				202D9E301F20DF7F00B1E06E /* DateUtil.swift in Sources */,
 				202D9E2D1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift in Sources */,
 				2099466D1F4B357F001F5FA4 /* SearchContract.swift in Sources */,
+				100280452202350D00AB95AD /* LocalNotificationUtil.swift in Sources */,
 				20A1449D1F1CE6FA005CCDC7 /* UIImageView+AlamofireImage.swift in Sources */,
 				10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */,
 				102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */,
@@ -491,6 +516,7 @@
 				2099466A1F4B3373001F5FA4 /* SearchViewController.swift in Sources */,
 				10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */,
 				202D9E341F2A796C00B1E06E /* FilterBy.swift in Sources */,
+				10028042220219BF00AB95AD /* SettingsViewController.swift in Sources */,
 				20A144771F190D6F005CCDC7 /* AppDelegate.swift in Sources */,
 				20A1448D1F19125B005CCDC7 /* GameTableViewCell.swift in Sources */,
 				20A1449A1F1CE164005CCDC7 /* Reachability.swift in Sources */,
@@ -624,6 +650,7 @@
 			baseConfigurationReference = F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Switch Library.entitlements";
 				DEVELOPMENT_TEAM = AUW9773P92;
 				INFOPLIST_FILE = "Upcoming Games/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -640,6 +667,7 @@
 			baseConfigurationReference = 31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Switch Library.entitlements";
 				DEVELOPMENT_TEAM = AUW9773P92;
 				INFOPLIST_FILE = "Upcoming Games/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

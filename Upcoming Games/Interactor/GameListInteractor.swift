@@ -57,4 +57,8 @@ class GameListInteractor {
     func isFavorite(_ id: String) -> Bool {
         return localDataManager.isFavorite(favorite: Favorite(id))
     }
+    
+    func getFavorites() -> [Favorite]? {
+        return localDataManager.getFavorites()
+    }
 }

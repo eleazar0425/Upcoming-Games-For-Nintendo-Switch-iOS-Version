@@ -69,26 +69,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             }
             for game in games {
                 if interactor.isFavorite(game.id), !game.salePrice.isEmpty {
-                    let content = UNMutableNotificationContent()
-                    content.title = "Beep, boop!"
-                    content.body = "\(game.title) has a price discount to $\(game.salePrice) on the eShop now!"
-                    content.sound = UNNotificationSound.default
-                    let jsonEncoder = JSONEncoder()
-                    let jsonData = try! jsonEncoder.encode(game)
-                    let json = String(data: jsonData, encoding: String.Encoding.utf8)
-                    content.userInfo = ["game": json ?? "", "notificationType": "discount"]
-                    
-                    let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,
-                                                                    repeats: false)
-                    let identifier = "FavoriteGameDiscountNotification-\(game.id)"
-                    let request = UNNotificationRequest(identifier: identifier,
-                                                        content: content, trigger: trigger)
-                    let center = UNUserNotificationCenter.current()
-                    center.add(request, withCompletionHandler: { (error) in
-                        if error != nil {
-                            print("something went wrong!")
-                        }
-                    })
+                    LocalNotificationUtil.scheduleNotification(for: game, notificationType: .discountedGame)
                 }
             }
             completionHandler(.newData)
@@ -98,7 +79,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
-        print("\(userInfo)")
     }
 }
 

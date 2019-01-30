@@ -43,6 +43,11 @@ class Game : Object, Codable {
         }
     }
     
+    convenience init(id: String){
+        self.init()
+        self.id = id
+    }
+    
     override class func primaryKey() -> String {
         return "id"
     }

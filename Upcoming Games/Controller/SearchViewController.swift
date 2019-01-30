@@ -30,7 +30,9 @@ class SearchViewController: UIViewController {
 
         SwiftEventBus.onMainThread(self, name: "favoritesUpdate") { result in
             let event = result?.object as! FavoriteEvent
-            guard let index = self.results.firstIndex(of: event.game) else { return }
+            guard let index = self.results.firstIndex(where: { game  in
+                game.id == event.game.id
+            }) else { return }
             let indexPath = IndexPath(row: index, section: 0)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
         }
@@ -119,36 +121,11 @@ extension SearchViewController: ToggleFavoriteDelegate {
         if isFavorite {
             presenter.saveFavorite(id: game.id)
             message = "\(game.title) has been added to favorites"
-            let content = UNMutableNotificationContent()
-            content.title = "Beep, boop!"
-            content.body = "\(game.title) is releasing today!"
-            content.sound = UNNotificationSound.default
-            let jsonEncoder = JSONEncoder()
-            let jsonData = try! jsonEncoder.encode(game)
-            let json = String(data: jsonData, encoding: String.Encoding.utf8)
-            content.userInfo = ["game": json ?? "", "notificationType": "releasedGame"]
-            
-            let releaseDate = DateUtil.parse(from: game.releaseDate)!
-            
-            let calendar = Calendar.current
-            
-            let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: releaseDate)
-            
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-            
-            let identifier = "FavoriteGameReleasedNotification-\(game.id)"
-            let request = UNNotificationRequest(identifier: identifier,
-                                                content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(request, withCompletionHandler: { (error) in
-                if error != nil {
-                    print("something went wrong!")
-                }
-            })
+            LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
         }else{
             presenter.deleteFavorite(id: game.id)
             message = "\(game.title) has been removed from favorites"
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["FavoriteGameReleasedNotification-\(game.id)"])
+            LocalNotificationUtil.removePendingNotifications(to: game)
         }
 
         SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: isFavorite))

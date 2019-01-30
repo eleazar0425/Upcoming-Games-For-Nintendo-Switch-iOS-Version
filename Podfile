@@ -16,4 +16,5 @@ target 'Switch Library' do
   pod 'HGPlaceholders'
   pod 'YouTubePlayer'
   pod 'SwiftEventBus'
+  pod 'SwiftMessages'
 end

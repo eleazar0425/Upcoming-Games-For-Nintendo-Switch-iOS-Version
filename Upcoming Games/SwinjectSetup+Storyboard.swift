@@ -75,5 +75,9 @@ extension SwinjectStoryboard {
         defaultContainer.storyboardInitCompleted(NotificationViewController.self) { (r,c) in
             c.interactor = r.resolve(GameListInteractor.self)!
         }
+        
+        defaultContainer.storyboardInitCompleted(SettingsViewController.self) { (r,c) in
+            c.interactor = r.resolve(GameListInteractor.self)!
+        }
     }
 }

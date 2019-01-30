@@ -62,4 +62,19 @@ class GameLocalDataManager {
         guard let _ = result else { return false }
         return true
     }
+    
+    func getFavorites() -> [Favorite]? {
+        let result = realm.objects(Favorite.self)
+        guard result.count != 0 else {
+            return []
+        }
+        
+        var favorites = [Favorite]()
+        
+        for i in 0..<result.count {
+            favorites.append(result[i])
+        }
+        
+        return favorites
+    }
 }
