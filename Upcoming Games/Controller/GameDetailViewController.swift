@@ -9,6 +9,8 @@
 import UIKit
 import YouTubePlayer
 import SwiftEventBus
+import XCDYouTubeKit
+import AVKit
 
 class GameDetailViewController: UIViewController {
 
@@ -86,6 +88,19 @@ class GameDetailViewController: UIViewController {
         }
         SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: favoriteToggle.isSelected))
     }
+    
+    func playVideo(videoIdentifier: String?) {
+        let playerViewController = AVPlayerViewController()
+        self.present(playerViewController, animated: true, completion: nil)
+        
+        XCDYouTubeClient.default().getVideoWithIdentifier(videoIdentifier) { [weak playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
+            if let streamURLs = video?.streamURLs, let streamURL = (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? streamURLs[YouTubeVideoQuality.hd720] ?? streamURLs[YouTubeVideoQuality.medium360] ?? streamURLs[YouTubeVideoQuality.small240]) {
+                playerViewController?.player = AVPlayer(url: streamURL)
+            } else {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
 }
 
 extension GameDetailViewController: GameDetailView {
@@ -96,4 +111,10 @@ extension GameDetailViewController: GameDetailView {
     func setGameDescription(description: String?, error: Error?) {
         self.descriptionLabel.text = description ?? ""
     }
+}
+
+struct YouTubeVideoQuality {
+    static let hd720 = NSNumber(value: XCDYouTubeVideoQuality.HD720.rawValue)
+    static let medium360 = NSNumber(value: XCDYouTubeVideoQuality.medium360.rawValue)
+    static let small240 = NSNumber(value: XCDYouTubeVideoQuality.small240.rawValue)
 }

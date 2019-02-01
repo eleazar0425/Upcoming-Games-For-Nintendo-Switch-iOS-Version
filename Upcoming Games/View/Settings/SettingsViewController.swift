@@ -48,7 +48,9 @@ class SettingsViewController: UITableViewController {
     }
     
     func showAboutUsAlert(){
-        
+        let alert = UIAlertController(title: "About", message: "This is an app made with love from r/NintendoSwitch users <3 Version 1.0.0", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        self.present(alert, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

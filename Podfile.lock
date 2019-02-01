@@ -17,6 +17,7 @@ PODS:
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
   - Toast-Swift (4.0.1)
+  - XCDYouTubeKit (2.7.1)
   - YouTubePlayer (0.4.0)
 
 DEPENDENCIES:
@@ -30,6 +31,7 @@ DEPENDENCIES:
   - Swinject
   - SwinjectStoryboard
   - Toast-Swift
+  - XCDYouTubeKit
   - YouTubePlayer
 
 SPEC REPOS:
@@ -45,6 +47,7 @@ SPEC REPOS:
     - Swinject
     - SwinjectStoryboard
     - Toast-Swift
+    - XCDYouTubeKit
     - YouTubePlayer
 
 SPEC CHECKSUMS:
@@ -59,8 +62,9 @@ SPEC CHECKSUMS:
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  XCDYouTubeKit: c8567fd5cb388a3099fa26eee4b30df2a467847d
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: 1527f7a8bfd6e5d00f975f71ab8a85495b94cf8c
+PODFILE CHECKSUM: a52bf8c180944c931bcad44eb21e122335b7a869
 
 COCOAPODS: 1.5.3

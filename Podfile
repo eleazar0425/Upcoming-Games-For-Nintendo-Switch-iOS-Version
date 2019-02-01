@@ -17,4 +17,5 @@ target 'Switch Library' do
   pod 'YouTubePlayer'
   pod 'SwiftEventBus'
   pod 'SwiftMessages'
+  pod 'XCDYouTubeKit'
 end

@@ -309,7 +309,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfi-Nx-Pdv">
-                                <rect key="frame" x="31" y="475" width="313" height="143"/>
+                                <rect key="frame" x="31" y="480" width="313" height="138"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
@@ -389,7 +389,7 @@
                             <constraint firstItem="TW8-4h-yAB" firstAttribute="leading" secondItem="9aS-hT-ptC" secondAttribute="leading" constant="15" id="HBw-D0-4uP"/>
                             <constraint firstItem="73o-lb-mKv" firstAttribute="top" secondItem="lE5-UU-2nX" secondAttribute="bottom" constant="25" id="Rvt-jC-ee1"/>
                             <constraint firstItem="73o-lb-mKv" firstAttribute="leading" secondItem="9aS-hT-ptC" secondAttribute="leadingMargin" constant="15" id="eHF-BV-NQI"/>
-                            <constraint firstItem="dfi-Nx-Pdv" firstAttribute="top" secondItem="TW8-4h-yAB" secondAttribute="bottom" constant="8" id="qU2-Vt-jo1"/>
+                            <constraint firstItem="dfi-Nx-Pdv" firstAttribute="top" secondItem="TW8-4h-yAB" secondAttribute="bottom" constant="13" id="qU2-Vt-jo1"/>
                             <constraint firstAttribute="trailingMargin" secondItem="73o-lb-mKv" secondAttribute="trailing" constant="15" id="sbj-qr-wSL"/>
                             <constraint firstAttribute="trailing" secondItem="TW8-4h-yAB" secondAttribute="trailing" constant="15" id="x6c-Wz-c2r"/>
                         </constraints>
