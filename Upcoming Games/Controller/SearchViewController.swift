@@ -161,6 +161,14 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         cell.price.text = (game.price != "" ? "$\(game.price)": "TBA" )
         cell.physicalRelease.text = "Physical release: \(game.physicalRelease ? "Yes" : "No")"
         
+        let salePrice = game.salePrice
+        if !salePrice.isEmpty {
+            cell.hasSalePrice = true
+            cell.salePrice.text = "$\(salePrice)"
+        }else{
+            cell.hasSalePrice = false
+        }
+        
         guard let releaseDate = DateUtil.parse(from: game.releaseDate),
             let daysToRelease = DateUtil.daysBetweenDates(Date(), releaseDate) else {
                 return cell

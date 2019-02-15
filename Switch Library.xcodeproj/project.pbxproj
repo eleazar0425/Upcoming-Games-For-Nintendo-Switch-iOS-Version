@@ -655,6 +655,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Switch Library.entitlements";
 				DEVELOPMENT_TEAM = AUW9773P92;
 				INFOPLIST_FILE = "Upcoming Games/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Upcoming-Games";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -672,6 +673,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Switch Library.entitlements";
 				DEVELOPMENT_TEAM = AUW9773P92;
 				INFOPLIST_FILE = "Upcoming Games/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Upcoming-Games";
 				PRODUCT_NAME = "$(TARGET_NAME)";
