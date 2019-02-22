@@ -70,6 +70,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             for game in games {
                 if interactor.isFavorite(game.id), !game.salePrice.isEmpty {
                     LocalNotificationUtil.scheduleNotification(for: game, notificationType: .discountedGame)
+                    //just in case released date has been updated
+                    LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
                 }
             }
             completionHandler(.newData)
@@ -78,7 +80,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        let userInfo = response.notification.request.content.userInfo
+        //let userInfo = response.notification.request.content.userInfo
     }
 }
 

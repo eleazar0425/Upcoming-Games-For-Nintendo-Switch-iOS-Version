@@ -68,10 +68,25 @@ class GamesViewController: UIViewController {
         prepareActivityIndicator()
         //activityIndicator.startAnimating()
         tableView.showLoadingPlaceholder()
+        
+        hideNavigation()
         presenter.getGameList()
         
     }
+    
+    func hideNavigation(){
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        self.tabBarController?.tabBar.isHidden = true
+        UIView.transition(with: tabBarController!.view, duration: 0.35, options: .transitionCrossDissolve, animations: nil)
+        
+    }
 
+    func showNavigation(){
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.tabBarController?.tabBar.isHidden = false
+        UIView.transition(with: tabBarController!.view, duration: 0.35, options: .transitionCrossDissolve, animations: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -274,12 +289,21 @@ extension GamesViewController : GameListProtocol {
         order(by: orderByState)
         filter(by: filterState)
         
+        for game in self.games {
+            if self.presenter.isFavorite(id: game.id){
+                //Just in case that release date has been updated
+                LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
+            }
+        }
+        
         let searchController = (self.tabBarController?.viewControllers?[1] as! UINavigationController).viewControllers[0] as! SearchViewController
         
         let notificationController = (self.tabBarController?.viewControllers?[2] as! UINavigationController).viewControllers[0] as! NotificationViewController
         
         searchController.games = self.games
         notificationController.games = self.games
+        
+        showNavigation()
     }
     
     func showErrorMessage(){
