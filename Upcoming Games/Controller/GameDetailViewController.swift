@@ -43,6 +43,17 @@ class GameDetailViewController: UIViewController {
             }
         }
         
+        SwiftEventBus.onMainThread(self, name: "currencyUpdate") { _ in
+            self.price.text = "$\(self.game.computedPrice)"
+            if !self.game.salePrice.isEmpty {
+                self.salePrice.text = "$\(self.game.computedSalePrice)"
+                self.salePrice.isHidden = false
+                let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: self.price.text!)
+                attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))
+                self.price.attributedText = attributeString
+            }
+        }
+        
         favoriteToggle.isSelected = false
         favoriteToggle.setImage(#imageLiteral(resourceName: "favoriteIcon").withRenderingMode(.alwaysOriginal), for : .selected)
         favoriteToggle.setImage(#imageLiteral(resourceName: "notFavoriteIcon").withRenderingMode(.alwaysOriginal), for: .normal)
@@ -65,9 +76,9 @@ class GameDetailViewController: UIViewController {
         genres.text = game.categories
         numberOfPlayers.text = game.numberOfPlayers
         
-        price.text = "$\(game.price)"
+        price.text = "$\(game.computedPrice)"
         if !game.salePrice.isEmpty {
-            salePrice.text = "$\(game.salePrice)"
+            salePrice.text = "$\(game.computedSalePrice)"
             salePrice.isHidden = false
             let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: price.text!)
             attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0, attributeString.length))

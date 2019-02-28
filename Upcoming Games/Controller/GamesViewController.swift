@@ -65,6 +65,10 @@ class GamesViewController: UIViewController {
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
         }
         
+        SwiftEventBus.onMainThread(self, name: "currencyUpdate") { _ in
+            self.tableView.reloadData()
+        }
+        
         prepareActivityIndicator()
         //activityIndicator.startAnimating()
         tableView.showLoadingPlaceholder()
@@ -203,9 +207,9 @@ extension GamesViewController : UITableViewDataSource {
         cell.title.text = game.title
         cell.releaseOn.text = game.releaseDate
         cell.boxArt.setImage(withPath: game.boxArt, placeholderImage: #imageLiteral(resourceName: "placeholder"))
-        cell.price.text = (game.price != "" ? "$\(game.price)": "TBA" )
+        cell.price.text = (game.computedPrice != "" ? "$\(game.computedPrice)": "TBA" )
         
-        let salePrice = game.salePrice
+        let salePrice = game.computedSalePrice
         if !salePrice.isEmpty {
             cell.hasSalePrice = true
             cell.salePrice.text = "$\(salePrice)"

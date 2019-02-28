@@ -15,6 +15,9 @@
 		102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */; };
 		102FD4282201071400A701B6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4272201071400A701B6 /* NotificationTableViewCell.swift */; };
 		102FD42A2201081500A701B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4292201081500A701B6 /* NotificationViewController.swift */; };
+		1062E1852220479800C6CA68 /* CurrencySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062E1842220479800C6CA68 /* CurrencySettings.swift */; };
+		1078291522284163000F381A /* CurrencyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078291422284163000F381A /* CurrencyPickerViewController.swift */; };
+		107829172228571B000F381A /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107829162228571B000F381A /* Double+Round.swift */; };
 		10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */; };
 		10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B121F7713500D9AF59 /* YoutubeService.swift */; };
 		10B1A4B421F771B900D9AF59 /* YoutubeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */; };
@@ -59,6 +62,9 @@
 		102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvent.swift; sourceTree = "<group>"; };
 		102FD4272201071400A701B6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		102FD4292201081500A701B6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		1062E1842220479800C6CA68 /* CurrencySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySettings.swift; sourceTree = "<group>"; };
+		1078291422284163000F381A /* CurrencyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerViewController.swift; sourceTree = "<group>"; };
+		107829162228571B000F381A /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		10B1A4B121F7713500D9AF59 /* YoutubeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeService.swift; sourceTree = "<group>"; };
 		10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRouter.swift; sourceTree = "<group>"; };
@@ -125,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				10028041220219BF00AB95AD /* SettingsViewController.swift */,
+				1078291422284163000F381A /* CurrencyPickerViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -161,6 +168,8 @@
 				202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */,
 				20698CCF1F4DCFC9006C6A6A /* FavoriteUtil.swift */,
 				100280442202350D00AB95AD /* LocalNotificationUtil.swift */,
+				1062E1842220479800C6CA68 /* CurrencySettings.swift */,
+				107829162228571B000F381A /* Double+Round.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -455,6 +464,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
+				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework",
@@ -463,6 +473,7 @@
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
+				"${BUILT_PRODUCTS_DIR}/WheelPicker/WheelPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 			);
@@ -471,6 +482,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/HGPlaceholders.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Presentr.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftEventBus.framework",
@@ -479,6 +491,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Swinject.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwinjectStoryboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toast_Swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WheelPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCDYouTubeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/YouTubePlayer.framework",
 			);
@@ -505,6 +518,7 @@
 				1002803C2201E2BB00AB95AD /* Notification.swift in Sources */,
 				10B1A4BB21F78D3300D9AF59 /* IGDBRouter.swift in Sources */,
 				20A144B51F1CF2F3005CCDC7 /* GameRemoteDataManager.swift in Sources */,
+				1078291522284163000F381A /* CurrencyPickerViewController.swift in Sources */,
 				202D9E301F20DF7F00B1E06E /* DateUtil.swift in Sources */,
 				202D9E2D1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift in Sources */,
 				2099466D1F4B357F001F5FA4 /* SearchContract.swift in Sources */,
@@ -527,6 +541,8 @@
 				20A144931F1918CA005CCDC7 /* Game.swift in Sources */,
 				20698CD01F4DCFC9006C6A6A /* FavoriteUtil.swift in Sources */,
 				20A144A61F1CE9AA005CCDC7 /* APIClient.swift in Sources */,
+				107829172228571B000F381A /* Double+Round.swift in Sources */,
+				1062E1852220479800C6CA68 /* CurrencySettings.swift in Sources */,
 				20A144B31F1CF285005CCDC7 /* GameLocalDataManager.swift in Sources */,
 				202D9E321F27E13000B1E06E /* OrderBy.swift in Sources */,
 				102FD4282201071400A701B6 /* NotificationTableViewCell.swift in Sources */,

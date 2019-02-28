@@ -3,6 +3,7 @@ PODS:
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
   - HGPlaceholders (0.3.0)
+  - Presentr (1.9)
   - Realm (3.12.0):
     - Realm/Headers (= 3.12.0)
   - Realm/Headers (3.12.0)
@@ -17,6 +18,7 @@ PODS:
   - SwinjectStoryboard (2.1.0):
     - Swinject (~> 2.5)
   - Toast-Swift (4.0.1)
+  - WheelPicker (1.0.0)
   - XCDYouTubeKit (2.7.1)
   - YouTubePlayer (0.4.0)
 
@@ -24,6 +26,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - HGPlaceholders
+  - Presentr
   - RealmSwift
   - SwiftEventBus
   - SwiftMessages
@@ -31,6 +34,7 @@ DEPENDENCIES:
   - Swinject
   - SwinjectStoryboard
   - Toast-Swift
+  - WheelPicker
   - XCDYouTubeKit
   - YouTubePlayer
 
@@ -39,6 +43,7 @@ SPEC REPOS:
     - Alamofire
     - AlamofireImage
     - HGPlaceholders
+    - Presentr
     - Realm
     - RealmSwift
     - SwiftEventBus
@@ -47,6 +52,7 @@ SPEC REPOS:
     - Swinject
     - SwinjectStoryboard
     - Toast-Swift
+    - WheelPicker
     - XCDYouTubeKit
     - YouTubePlayer
 
@@ -54,6 +60,7 @@ SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   AlamofireImage: 1aea346f4dda2f6c67622fa5a89fcbb80d79cc16
   HGPlaceholders: 2df01c51b04a30acd0b8c9c7161c7cdde4541109
+  Presentr: 7078d7eb5d1661ebeaae60c9e42a1e534de1b993
   Realm: cdaef23c4ddb36ab1ddffed23f5a7f3332fc5585
   RealmSwift: 5576324033f0aa5ef1e0a839a3da2281dff47a7f
   SwiftEventBus: 9e8f6d8cff2826d66536ec367d17a47299478aa0
@@ -62,9 +69,10 @@ SPEC CHECKSUMS:
   Swinject: 82cdb851f63f91bba974e3eca1d69780f2f7677e
   SwinjectStoryboard: 688f096033103e66ffcf6ca678211acd7d7be505
   Toast-Swift: e42a638589a2f95036b4bb7626cfbdde7daf0393
+  WheelPicker: b8d5e7bfab554a2f7fa1c078e0b7114df0e0af32
   XCDYouTubeKit: c8567fd5cb388a3099fa26eee4b30df2a467847d
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: a52bf8c180944c931bcad44eb21e122335b7a869
+PODFILE CHECKSUM: 54b5f65d5cce98fecc6e7be659e879cf73268121
 
 COCOAPODS: 1.5.3

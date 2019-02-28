@@ -9,12 +9,15 @@
 import UIKit
 import SwiftMessages
 import SwiftEventBus
+import Presentr
 
 class SettingsViewController: UITableViewController {
     
     let documentInteractionController = UIDocumentInteractionController()
     var interactor: GameListInteractor!
     let notification = UINotificationFeedbackGenerator()
+    
+    let pickerData = ["USD", "CAD"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,26 @@ class SettingsViewController: UITableViewController {
         self.present(alert, animated: true)
     }
     
+    func showCurrencyPicker(){
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "currencyPickerViewController")
+        
+        let width = ModalSize.fluid(percentage: 0.85)
+        let height =  ModalSize.fluid(percentage: 0.50)
+        let center = ModalCenterPosition.center
+        let customType = PresentationType.custom(width: width, height: height, center: center)
+        
+        let customPresenter = Presentr(presentationType: customType)
+        customPresenter.transitionType = .coverVerticalFromTop
+        customPresenter.dismissTransitionType = .crossDissolve
+        customPresenter.roundCorners = true
+        customPresenter.backgroundOpacity = 0.5
+        customPresenter.dismissOnSwipe = false
+        customPresenter.dismissOnSwipeDirection = .top
+        customPresenter.dismissOnSwipe = false
+        
+        self.customPresentViewController(customPresenter, viewController: vc, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
@@ -60,6 +83,8 @@ class SettingsViewController: UITableViewController {
         case 1:
             importFavorites()
         case 2:
+            showCurrencyPicker()
+        case 3:
             showAboutUsAlert()
         default:
             return
@@ -112,6 +137,24 @@ extension SettingsViewController: UIDocumentInteractionControllerDelegate, UIDoc
             view.button?.isHidden = true
             return view
         }
+    }
+}
+
+extension SettingsViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickerData[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        CurrencySettings.saveCurrency(Currency(rawValue: pickerData[row])!)
     }
 }
 

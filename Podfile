@@ -18,4 +18,6 @@ target 'Switch Library' do
   pod 'SwiftEventBus'
   pod 'SwiftMessages'
   pod 'XCDYouTubeKit'
+  pod 'WheelPicker'
+  pod 'Presentr'
 end

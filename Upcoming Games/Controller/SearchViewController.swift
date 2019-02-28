@@ -36,6 +36,10 @@ class SearchViewController: UIViewController {
             let indexPath = IndexPath(row: index, section: 0)
             self.tableView.reloadRows(at: [indexPath], with: .automatic)
         }
+        
+        SwiftEventBus.onMainThread(self, name: "currencyUpdate") { _ in
+            self.tableView.reloadData()
+        }
 
         self.searchBar.delegate = self
         self.tableView.delegate = self
@@ -158,10 +162,10 @@ extension SearchViewController : UITableViewDelegate, UITableViewDataSource {
         cell.title.text = game.title
         cell.releaseOn.text = game.releaseDate
         cell.boxArt.setImage(withPath: game.boxArt, placeholderImage: #imageLiteral(resourceName: "placeholder"))
-        cell.price.text = (game.price != "" ? "$\(game.price)": "TBA" )
+        cell.price.text = (game.computedPrice != "" ? "$\(game.computedPrice)": "TBA" )
         cell.physicalRelease.text = "Physical release: \(game.physicalRelease ? "Yes" : "No")"
         
-        let salePrice = game.salePrice
+        let salePrice = game.computedSalePrice
         if !salePrice.isEmpty {
             cell.hasSalePrice = true
             cell.salePrice.text = "$\(salePrice)"
