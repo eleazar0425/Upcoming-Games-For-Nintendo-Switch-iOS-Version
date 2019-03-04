@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol GameDetailView {
-    func setGameTrailerVideoId(videoId: String?, error: Error?)
+    func setGameTrailerVideoId(videoId: String?, thumbnail: String?, error: Error?)
     func setGameDescription(description: String?, error: Error?)
 }
 
@@ -24,8 +25,8 @@ class GameDetailPresenter {
     }
     
     func getGameTrailer(game: Game){
-        youtubeService.getGameTrailer(game: game) { (videoId, error) in
-            self.view.setGameTrailerVideoId(videoId: videoId, error: error)
+        youtubeService.getGameTrailer(game: game) { (videoId, thumbnail, error) in
+            self.view.setGameTrailerVideoId(videoId: videoId, thumbnail: thumbnail, error: error)
         }
     }
     

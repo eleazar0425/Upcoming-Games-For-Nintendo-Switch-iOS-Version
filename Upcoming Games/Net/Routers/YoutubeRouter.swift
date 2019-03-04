@@ -24,7 +24,7 @@ enum YoutubeRouter : URLRequestConvertible {
         case .getGameTrailer(let game):
             return [
                 "key": YoutubeRouter.API_KEY,
-                "part": "id",
+                "part": "id, snippet",
                 "maxResults": 1,
                 "type": "video",
                 "q": "\(game.title) for nintendo switch trailer"

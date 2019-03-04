@@ -12,7 +12,7 @@ import SwiftyJSON
 class YoutubeService {
     private let client: Client
     
-    typealias CompletionHandler = (_ videoId: String?, _ error: ServiceError? ) -> Void
+    typealias CompletionHandler = (_ videoId: String?, _ thumbnail: String?, _ error: ServiceError? ) -> Void
     
     required init(client: Client) {
         self.client = client
@@ -21,10 +21,11 @@ class YoutubeService {
     func getGameTrailer(game: Game, completion: @escaping CompletionHandler){
         let route = YoutubeRouter.getGameTrailer(game: game)
         client.request(route) { (data, serviceError) in
-            guard let id = data?["items"][0]["id"]["videoId"].stringValue else {
-                return completion(nil, ServiceError.noDataAvailable())
+            guard let id = data?["items"][0]["id"]["videoId"].stringValue,
+                let thumbnail = data?["items"][0]["snippet"]["thumbnails"]["high"]["url"].stringValue else {
+                return completion(nil, nil, ServiceError.noDataAvailable())
             }
-            completion(id, serviceError)
+            completion(id, thumbnail, serviceError)
         }
     }
 }

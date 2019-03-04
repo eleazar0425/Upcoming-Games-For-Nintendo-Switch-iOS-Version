@@ -18,6 +18,7 @@
 		1062E1852220479800C6CA68 /* CurrencySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062E1842220479800C6CA68 /* CurrencySettings.swift */; };
 		1078291522284163000F381A /* CurrencyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078291422284163000F381A /* CurrencyPickerViewController.swift */; };
 		107829172228571B000F381A /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107829162228571B000F381A /* Double+Round.swift */; };
+		10782942222DB8E8000F381A /* YoutubeVideoQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10782941222DB8E8000F381A /* YoutubeVideoQuality.swift */; };
 		10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */; };
 		10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B121F7713500D9AF59 /* YoutubeService.swift */; };
 		10B1A4B421F771B900D9AF59 /* YoutubeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */; };
@@ -65,6 +66,7 @@
 		1062E1842220479800C6CA68 /* CurrencySettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySettings.swift; sourceTree = "<group>"; };
 		1078291422284163000F381A /* CurrencyPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyPickerViewController.swift; sourceTree = "<group>"; };
 		107829162228571B000F381A /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
+		10782941222DB8E8000F381A /* YoutubeVideoQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoQuality.swift; sourceTree = "<group>"; };
 		10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		10B1A4B121F7713500D9AF59 /* YoutubeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeService.swift; sourceTree = "<group>"; };
 		10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRouter.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */,
 				1002803B2201E2BB00AB95AD /* Notification.swift */,
 				1002803E2201E8D600AB95AD /* GamesEvent.swift */,
+				10782941222DB8E8000F381A /* YoutubeVideoQuality.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -532,6 +535,7 @@
 				2099466A1F4B3373001F5FA4 /* SearchViewController.swift in Sources */,
 				10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */,
 				202D9E341F2A796C00B1E06E /* FilterBy.swift in Sources */,
+				10782942222DB8E8000F381A /* YoutubeVideoQuality.swift in Sources */,
 				10028042220219BF00AB95AD /* SettingsViewController.swift in Sources */,
 				20A144771F190D6F005CCDC7 /* AppDelegate.swift in Sources */,
 				20A1448D1F19125B005CCDC7 /* GameTableViewCell.swift in Sources */,

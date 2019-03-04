@@ -23,6 +23,9 @@ class GameDetailViewController: UIViewController {
     @IBOutlet weak var videoPlayer: YouTubePlayerView!
     @IBOutlet weak var descriptionLabel: UITextView!
     
+    @IBOutlet weak var videoPlayerView: UIView!
+    
+    
     var game: Game!
     var presenter: GameDetailPresenter!
     let impact = UIImpactFeedbackGenerator()
@@ -100,23 +103,30 @@ class GameDetailViewController: UIViewController {
         SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: favoriteToggle.isSelected))
     }
     
-    func playVideo(videoIdentifier: String?) {
+    func playVideo(videoIdentifier: String?, thumbnail: String?) {
         let playerViewController = AVPlayerViewController()
-        self.present(playerViewController, animated: true, completion: nil)
+        playerViewController.view.frame = self.videoPlayerView.frame
         
-        XCDYouTubeClient.default().getVideoWithIdentifier(videoIdentifier) { [weak playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.videoPlayerView.frame.width, height: self.videoPlayerView.frame.height))
+        imageView.setImage(withPath: thumbnail!)
+        imageView.contentMode = .scaleAspectFit
+        
+        playerViewController.contentOverlayView?.addSubview(imageView)
+        
+        self.addChild(playerViewController)
+        self.view.addSubview(playerViewController.view)
+        XCDYouTubeClient.default().getVideoWithIdentifier(videoIdentifier) { [unowned playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
             if let streamURLs = video?.streamURLs, let streamURL = (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? streamURLs[YouTubeVideoQuality.hd720] ?? streamURLs[YouTubeVideoQuality.medium360] ?? streamURLs[YouTubeVideoQuality.small240]) {
-                playerViewController?.player = AVPlayer(url: streamURL)
-            } else {
-                self.dismiss(animated: true, completion: nil)
+                playerViewController.player = AVPlayer(url: streamURL)
             }
         }
     }
 }
 
 extension GameDetailViewController: GameDetailView {
-    func setGameTrailerVideoId(videoId: String?, error: Error?) {
-        videoPlayer.loadVideoID(videoId ?? "f5uik5fgIaI")
+    func setGameTrailerVideoId(videoId: String?, thumbnail: String?, error: Error?) {
+        //videoPlayer.loadVideoID(videoId ?? "f5uik5fgIaI")
+        playVideo(videoIdentifier: videoId ?? "f5uik5fgIaI", thumbnail: thumbnail)
     }
     
     func setGameDescription(description: String?, error: Error?) {
