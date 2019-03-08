@@ -23,3 +23,11 @@ target 'Switch Library' do
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
 end
+
+target 'Switch Library Widget' do
+    
+    use_frameworks!
+    pod 'AlamofireImage'
+    pod 'RealmSwift'
+    
+end

@@ -21,8 +21,10 @@ extension SwinjectStoryboard {
         }
         
         defaultContainer.register(Realm.self) { _  in
-            let config = Realm.Configuration(deleteRealmIfMigrationNeeded: true)
-            
+            let fileURL = FileManager.default
+                .containerURL(forSecurityApplicationGroupIdentifier: "group.switchlibrary")!
+                .appendingPathComponent("default.realm")
+            let config = Realm.Configuration(fileURL: fileURL, deleteRealmIfMigrationNeeded: true)
             // Tell Realm to use this new configuration object for the default Realm
             Realm.Configuration.defaultConfiguration = config
             return try! Realm()
