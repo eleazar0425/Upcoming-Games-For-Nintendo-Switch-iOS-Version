@@ -37,7 +37,13 @@ class LocalNotificationUtil {
         
         let dateComponents = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: releaseDate)
         
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        var trigger: UNNotificationTrigger
+        switch notificationType {
+        case .discountedGame:
+            trigger = UNTimeIntervalNotificationTrigger(timeInterval: 1, repeats: false)
+        case .releasedGame:
+            trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
+        }
         
         var identifier = ""
         

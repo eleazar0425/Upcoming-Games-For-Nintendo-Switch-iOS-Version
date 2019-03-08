@@ -11,6 +11,7 @@ import Toast_Swift
 import UserNotifications
 import HGPlaceholders
 import SwiftEventBus
+import FirebaseMessaging
 
 class GamesViewController: UIViewController {
 
@@ -59,8 +60,10 @@ class GamesViewController: UIViewController {
             let game = self.games[index]
             if event.isFavorite {
                 LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
+                Messaging.messaging().subscribe(toTopic: "/topics/"+game.id)
             }else {
                 LocalNotificationUtil.removePendingNotifications(to: game)
+                Messaging.messaging().unsubscribe(fromTopic: "/topics/"+game.id)
             }
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
         }
@@ -251,10 +254,14 @@ extension GamesViewController: ToggleFavoriteDelegate {
             presenter.saveFavorite(id: game.id)
             message = "\(game.title) has been added to favorites"
             LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
+            //Subscribe to firebase for discounts
+            Messaging.messaging().subscribe(toTopic: "/topics/"+game.id)
         }else{
             presenter.deleteFavorite(id: game.id)
             message = "\(game.title) has been removed from favorites"
             LocalNotificationUtil.removePendingNotifications(to: game)
+            //Unsuscribe from firebase
+            Messaging.messaging().unsubscribe(fromTopic: "/topics/"+game.id)
         }
         SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: isFavorite))
         self.view.makeToast(message)

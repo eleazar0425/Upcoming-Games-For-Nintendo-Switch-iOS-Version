@@ -10,6 +10,7 @@ import UIKit
 import Toast_Swift
 import UserNotifications
 import SwiftEventBus
+import FirebaseMessaging
 
 class SearchViewController: UIViewController {
     
@@ -126,10 +127,12 @@ extension SearchViewController: ToggleFavoriteDelegate {
             presenter.saveFavorite(id: game.id)
             message = "\(game.title) has been added to favorites"
             LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
+            Messaging.messaging().subscribe(toTopic: "/topics/"+game.id)
         }else{
             presenter.deleteFavorite(id: game.id)
             message = "\(game.title) has been removed from favorites"
             LocalNotificationUtil.removePendingNotifications(to: game)
+            Messaging.messaging().unsubscribe(fromTopic: "/topics/"+game.id)
         }
 
         SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: isFavorite))

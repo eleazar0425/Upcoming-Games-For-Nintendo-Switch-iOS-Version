@@ -20,4 +20,6 @@ target 'Switch Library' do
   pod 'XCDYouTubeKit'
   pod 'WheelPicker'
   pod 'Presentr'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 end
