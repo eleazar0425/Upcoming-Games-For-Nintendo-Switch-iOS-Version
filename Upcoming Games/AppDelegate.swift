@@ -82,27 +82,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Messaging.messaging().subscribe(toTopic: "/topics/all")
     }
     
-    func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        let interactor = SwinjectStoryboard.defaultContainer.resolve(GameListInteractor.self)!
-        interactor.getGames { (games, error) in
-            guard let games = games else {
-                completionHandler(.noData)
-                return
-            }
-            if error != nil {
-                completionHandler(.failed)
-            }
-            for game in games {
-                if interactor.isFavorite(game.id), !game.salePrice.isEmpty {
-                    LocalNotificationUtil.scheduleNotification(for: game, notificationType: .discountedGame)
-                    //just in case released date has been updated
-                    LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
-                }
-            }
-            completionHandler(.newData)
-        }
-    }
-    
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler(.alert)
