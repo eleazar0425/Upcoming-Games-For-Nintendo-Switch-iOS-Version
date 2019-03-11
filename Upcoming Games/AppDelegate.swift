@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let center = UNUserNotificationCenter.current()
         
-        let options: UNAuthorizationOptions = [.alert, .sound]
+        let options: UNAuthorizationOptions = [.alert, .badge, .sound]
         
         let alert = UIAlertController(title: "Please allow us to send you notifications", message: "We need this permission in order to notify you when your favorite games are about to release or are having discounts", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
@@ -50,16 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         center.delegate = self
-        
-        UIApplication.shared.setMinimumBackgroundFetchInterval(
-            UIApplication.backgroundFetchIntervalMinimum)
-        
-        UNUserNotificationCenter.current().delegate = self
-        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
-        UNUserNotificationCenter.current().requestAuthorization(
-            options: authOptions,
-            completionHandler: {_, _ in })
-        
         application.registerForRemoteNotifications()
 
         FirebaseApp.configure()
