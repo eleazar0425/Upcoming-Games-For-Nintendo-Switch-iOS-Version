@@ -17,6 +17,7 @@ class SearchPresenter {
     
     var view: SearchProtocol
     var interactor: GameListInteractor!
+    var notificationScheduler: NotificationScheduler!
     
     init(_ view: SearchProtocol) {
         self.view = view
@@ -49,12 +50,14 @@ class SearchPresenter {
         }
     }
     
-    func saveFavorite(id: String){
-        interactor.saveFavorite(id)
+    func saveFavorite(game: Game){
+        interactor.saveFavorite(game.id)
+        notificationScheduler.suscribeGameForNotifications(game: game, isFavorite: true)
     }
     
-    func deleteFavorite(id: String){
-        interactor.deleteFavorite(id)
+    func deleteFavorite(game: Game){
+        interactor.deleteFavorite(game.id)
+        notificationScheduler.suscribeGameForNotifications(game: game, isFavorite: false)
     }
     
     func isFavorite(id: String) -> Bool {

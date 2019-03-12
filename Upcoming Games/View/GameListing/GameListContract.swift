@@ -15,6 +15,7 @@ protocol GameListProtocol {
 class GameListPresenter {
     var view: GameListProtocol
     var interactor: GameListInteractor!
+    var notificationScheduler: NotificationScheduler!
     
     init(_ view: GameListProtocol){
         self.view = view
@@ -101,12 +102,14 @@ class GameListPresenter {
         }
     }
  
-    func saveFavorite(id: String){
-        interactor.saveFavorite(id)
+    func saveFavorite(game: Game){
+        interactor.saveFavorite(game.id)
+        notificationScheduler.suscribeGameForNotifications(game: game, isFavorite: true)
     }
     
-    func deleteFavorite(id: String){
-        interactor.deleteFavorite(id)
+    func deleteFavorite(game: Game){
+        interactor.deleteFavorite(game.id)
+        notificationScheduler.suscribeGameForNotifications(game: game, isFavorite: false)
     }
     
     func isFavorite(id: String) -> Bool {

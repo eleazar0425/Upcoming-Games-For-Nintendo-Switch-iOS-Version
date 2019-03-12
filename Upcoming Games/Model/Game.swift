@@ -85,6 +85,7 @@ class Game : Object, Codable {
         clon.title = game.title
         clon.salePrice = game.salePrice
         clon.categories = game.categories
+        clon.canadaPrice = game.canadaPrice
         return clon
     }
     
@@ -100,5 +101,11 @@ class Game : Object, Codable {
         let percentage = ( (100 - ( (usSaleDouble*100) / usDouble )) / 100 )
         let canadaSalePrice = ( canadaDouble - (canadaDouble*percentage) ).rounded(toPlaces: 2)
         return canadaSalePrice
+    }
+    
+    func discountPercentage() -> Int {
+        let usSaleDouble = Double(salePrice)!
+        let usDouble = Double(price)!
+        return Int( ( (100 - ( (usSaleDouble*100) / usDouble )) ) )
     }
 }

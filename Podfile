@@ -29,5 +29,5 @@ target 'Switch Library Widget' do
     use_frameworks!
     pod 'AlamofireImage'
     pod 'RealmSwift'
-    
+    pod 'SwiftyJSON'
 end

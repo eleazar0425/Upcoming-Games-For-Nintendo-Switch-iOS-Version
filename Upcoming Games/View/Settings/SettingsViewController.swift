@@ -51,7 +51,7 @@ class SettingsViewController: UITableViewController {
     }
     
     func showAboutUsAlert(){
-        let alert = UIAlertController(title: "About", message: "This is an app made with love from r/NintendoSwitch users <3 Version 1.0.0", preferredStyle: .alert)
+        let alert = UIAlertController(title: "About", message: "This is an app made with love from r/NintendoSwitch users <3 Version 1.2.0", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         self.present(alert, animated: true)
     }
@@ -76,6 +76,11 @@ class SettingsViewController: UITableViewController {
         self.customPresentViewController(customPresenter, viewController: vc, animated: true)
     }
     
+    func showNotificationSettings(){
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "notificationSettingsViewController")
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
@@ -83,8 +88,10 @@ class SettingsViewController: UITableViewController {
         case 1:
             importFavorites()
         case 2:
-            showCurrencyPicker()
+            showNotificationSettings()
         case 3:
+            showCurrencyPicker()
+        case 4:
             showAboutUsAlert()
         default:
             return

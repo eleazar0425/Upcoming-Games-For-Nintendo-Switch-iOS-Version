@@ -9,10 +9,11 @@
 import UIKit
 import NotificationCenter
 import AlamofireImage
+import RealmSwift
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     
-    var dataManager = GameLocalDataManager()
+    var dataManager: GameLocalDataManager!
     var games = [Game]()
         
     @IBOutlet weak var collectionView: UICollectionView!
@@ -20,6 +21,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+        let fileURL = FileManager.default
+            .containerURL(forSecurityApplicationGroupIdentifier: "group.switchlibrary")!
+            .appendingPathComponent("default.realm")
+        let config = Realm.Configuration(fileURL: fileURL, deleteRealmIfMigrationNeeded: true)
+        Realm.Configuration.defaultConfiguration = config
+        let realm =  try! Realm()
+        dataManager = GameLocalDataManager(realm: realm)
+        
         games += dataManager.getDiscountedFavoritesGames() ?? []
         collectionView.delegate = self
         collectionView.dataSource = self

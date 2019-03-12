@@ -18,9 +18,20 @@
 		1024EF092232F80C0036F0C9 /* Switch Library Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1024EEFD2232F80C0036F0C9 /* Switch Library Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1024EF0E2232F8450036F0C9 /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */; };
 		1024EF102232FBE80036F0C9 /* DiscountWidgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF0F2232FBE80036F0C9 /* DiscountWidgetCollectionViewCell.swift */; };
-		1024EF142232FF830036F0C9 /* GameLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF132232FF830036F0C9 /* GameLocalDataManager.swift */; };
-		1024EF162233013B0036F0C9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF152233013B0036F0C9 /* Game.swift */; };
-		1024EF182233063E0036F0C9 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF172233063E0036F0C9 /* Favorite.swift */; };
+		1024EF1E22370A420036F0C9 /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF1A223701A00036F0C9 /* NotificationSettingsViewController.swift */; };
+		1024EF1F22370A460036F0C9 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF1C223701C60036F0C9 /* NotificationSettingTableViewCell.swift */; };
+		1024EF2222370B5D0036F0C9 /* NotificationSettingsContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF2022370AB00036F0C9 /* NotificationSettingsContract.swift */; };
+		1024EF2522370D1F0036F0C9 /* Suscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF2322370CCC0036F0C9 /* Suscription.swift */; };
+		1024EF262237E7EC0036F0C9 /* GameLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */; };
+		1024EF272237E86C0036F0C9 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144921F1918CA005CCDC7 /* Game.swift */; };
+		1024EF292237E8960036F0C9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1024EF282237E8960036F0C9 /* RealmSwift.framework */; };
+		1024EF2B2237E8960036F0C9 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1024EF2A2237E8960036F0C9 /* RealmSwift.framework */; };
+		1024EF2D2237E8960036F0C9 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1024EF2C2237E8960036F0C9 /* SwiftyJSON.framework */; };
+		1024EF2E2237E96E0036F0C9 /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20698CCD1F4DCDB3006C6A6A /* Favorite.swift */; };
+		1024EF2F2237E9840036F0C9 /* Suscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF2322370CCC0036F0C9 /* Suscription.swift */; };
+		1024EF302237E9B80036F0C9 /* CurrencySettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1062E1842220479800C6CA68 /* CurrencySettings.swift */; };
+		1024EF312237EA280036F0C9 /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107829162228571B000F381A /* Double+Round.swift */; };
+		1024EF332237F1D50036F0C9 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF322237F1D50036F0C9 /* NotificationScheduler.swift */; };
 		102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */; };
 		102FD4282201071400A701B6 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4272201071400A701B6 /* NotificationTableViewCell.swift */; };
 		102FD42A2201081500A701B6 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 102FD4292201081500A701B6 /* NotificationViewController.swift */; };
@@ -102,9 +113,14 @@
 		1024EF062232F80C0036F0C9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1024EF0F2232FBE80036F0C9 /* DiscountWidgetCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscountWidgetCollectionViewCell.swift; sourceTree = "<group>"; };
 		1024EF112232FD300036F0C9 /* Switch Library Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Switch Library Widget.entitlements"; sourceTree = "<group>"; };
-		1024EF132232FF830036F0C9 /* GameLocalDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLocalDataManager.swift; sourceTree = "<group>"; };
-		1024EF152233013B0036F0C9 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		1024EF172233063E0036F0C9 /* Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
+		1024EF1A223701A00036F0C9 /* NotificationSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsViewController.swift; sourceTree = "<group>"; };
+		1024EF1C223701C60036F0C9 /* NotificationSettingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingTableViewCell.swift; sourceTree = "<group>"; };
+		1024EF2022370AB00036F0C9 /* NotificationSettingsContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsContract.swift; sourceTree = "<group>"; };
+		1024EF2322370CCC0036F0C9 /* Suscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Suscription.swift; sourceTree = "<group>"; };
+		1024EF282237E8960036F0C9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1024EF2A2237E8960036F0C9 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1024EF2C2237E8960036F0C9 /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1024EF322237F1D50036F0C9 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		102FD42421FB9D2F00A701B6 /* FavoriteEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvent.swift; sourceTree = "<group>"; };
 		102FD4272201071400A701B6 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
 		102FD4292201081500A701B6 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
@@ -163,6 +179,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1024EF292237E8960036F0C9 /* RealmSwift.framework in Frameworks */,
+				1024EF2B2237E8960036F0C9 /* RealmSwift.framework in Frameworks */,
+				1024EF2D2237E8960036F0C9 /* SwiftyJSON.framework in Frameworks */,
 				1024EF0E2232F8450036F0C9 /* Pods_Switch_Library.framework in Frameworks */,
 				1024EEFF2232F80C0036F0C9 /* NotificationCenter.framework in Frameworks */,
 				2C26CBF3F255B1FE56712F3D /* Pods_Switch_Library_Widget.framework in Frameworks */,
@@ -191,6 +210,7 @@
 		100280402202199F00AB95AD /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				1024EF192237017D0036F0C9 /* NotificationSettings */,
 				10028041220219BF00AB95AD /* SettingsViewController.swift */,
 				1078291422284163000F381A /* CurrencyPickerViewController.swift */,
 			);
@@ -213,11 +233,18 @@
 		1024EF122232FF750036F0C9 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				1024EF132232FF830036F0C9 /* GameLocalDataManager.swift */,
-				1024EF152233013B0036F0C9 /* Game.swift */,
-				1024EF172233063E0036F0C9 /* Favorite.swift */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		1024EF192237017D0036F0C9 /* NotificationSettings */ = {
+			isa = PBXGroup;
+			children = (
+				1024EF1A223701A00036F0C9 /* NotificationSettingsViewController.swift */,
+				1024EF1C223701C60036F0C9 /* NotificationSettingTableViewCell.swift */,
+				1024EF2022370AB00036F0C9 /* NotificationSettingsContract.swift */,
+			);
+			path = NotificationSettings;
 			sourceTree = "<group>";
 		};
 		102FD426220106F600A701B6 /* Notifications */ = {
@@ -254,6 +281,7 @@
 				100280442202350D00AB95AD /* LocalNotificationUtil.swift */,
 				1062E1842220479800C6CA68 /* CurrencySettings.swift */,
 				107829162228571B000F381A /* Double+Round.swift */,
+				1024EF322237F1D50036F0C9 /* NotificationScheduler.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -344,6 +372,7 @@
 				1002803B2201E2BB00AB95AD /* Notification.swift */,
 				1002803E2201E8D600AB95AD /* GamesEvent.swift */,
 				10782941222DB8E8000F381A /* YoutubeVideoQuality.swift */,
+				1024EF2322370CCC0036F0C9 /* Suscription.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +466,9 @@
 		D6147E0777DA3484AC86B86B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1024EF282237E8960036F0C9 /* RealmSwift.framework */,
+				1024EF2A2237E8960036F0C9 /* RealmSwift.framework */,
+				1024EF2C2237E8960036F0C9 /* SwiftyJSON.framework */,
 				706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */,
 				93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */,
 				1024EEFE2232F80C0036F0C9 /* NotificationCenter.framework */,
@@ -609,7 +641,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.0/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -621,6 +653,7 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS12.1/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm-iOS12.1/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS12.1/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.1/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -677,11 +710,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1024EF182233063E0036F0C9 /* Favorite.swift in Sources */,
+				1024EF2E2237E96E0036F0C9 /* Favorite.swift in Sources */,
 				1024EF022232F80C0036F0C9 /* TodayViewController.swift in Sources */,
 				1024EF102232FBE80036F0C9 /* DiscountWidgetCollectionViewCell.swift in Sources */,
-				1024EF142232FF830036F0C9 /* GameLocalDataManager.swift in Sources */,
-				1024EF162233013B0036F0C9 /* Game.swift in Sources */,
+				1024EF312237EA280036F0C9 /* Double+Round.swift in Sources */,
+				1024EF262237E7EC0036F0C9 /* GameLocalDataManager.swift in Sources */,
+				1024EF272237E86C0036F0C9 /* Game.swift in Sources */,
+				1024EF2F2237E9840036F0C9 /* Suscription.swift in Sources */,
+				1024EF302237E9B80036F0C9 /* CurrencySettings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -708,15 +744,20 @@
 				20A1449D1F1CE6FA005CCDC7 /* UIImageView+AlamofireImage.swift in Sources */,
 				10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */,
 				102FD42521FB9D2F00A701B6 /* FavoriteEvent.swift in Sources */,
+				1024EF1F22370A460036F0C9 /* NotificationSettingTableViewCell.swift in Sources */,
 				20698CCE1F4DCDB3006C6A6A /* Favorite.swift in Sources */,
 				20A144A01F1CE8CA005CCDC7 /* Client.swift in Sources */,
+				1024EF332237F1D50036F0C9 /* NotificationScheduler.swift in Sources */,
 				20A144971F1947E7005CCDC7 /* GamesViewController.swift in Sources */,
 				2099466A1F4B3373001F5FA4 /* SearchViewController.swift in Sources */,
+				1024EF1E22370A420036F0C9 /* NotificationSettingsViewController.swift in Sources */,
 				10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */,
 				202D9E341F2A796C00B1E06E /* FilterBy.swift in Sources */,
 				10782942222DB8E8000F381A /* YoutubeVideoQuality.swift in Sources */,
+				1024EF2222370B5D0036F0C9 /* NotificationSettingsContract.swift in Sources */,
 				10028042220219BF00AB95AD /* SettingsViewController.swift in Sources */,
 				20A144771F190D6F005CCDC7 /* AppDelegate.swift in Sources */,
+				1024EF2522370D1F0036F0C9 /* Suscription.swift in Sources */,
 				20A1448D1F19125B005CCDC7 /* GameTableViewCell.swift in Sources */,
 				20A1449A1F1CE164005CCDC7 /* Reachability.swift in Sources */,
 				1002803F2201E8D600AB95AD /* GamesEvent.swift in Sources */,

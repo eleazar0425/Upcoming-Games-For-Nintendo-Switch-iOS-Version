@@ -57,8 +57,6 @@ class GameLocalDataManager {
     
     func isFavorite(favorite: Favorite) -> Bool {
         let result = realm.object(ofType: Favorite.self, forPrimaryKey: favorite.id)
-        print(result ?? "no favorite value")
-        print(realm.objects(Favorite.self))
         guard let _ = result else { return false }
         return true
     }
@@ -76,5 +74,41 @@ class GameLocalDataManager {
         }
         
         return favorites
+    }
+    
+    func saveSuscription(suscription: Suscription) {
+        try! realm.write {
+            realm.add(suscription, update: true)
+        }
+    }
+    
+    func deleteSuscription(suscription: Suscription){
+        try! realm.write {
+            guard let objectToDelete = realm.object(ofType: Suscription.self, forPrimaryKey: suscription.id) else {return}
+            realm.delete(objectToDelete)
+        }
+    }
+    
+    func isSuscribed(suscription: Suscription) -> Bool {
+        let result = realm.object(ofType: Suscription.self, forPrimaryKey: suscription.id)
+        guard let _ = result else { return false }
+        return true
+    }
+    
+    func getDiscountedFavoritesGames() -> [Game]? {
+        let result = realm.objects(Game.self)
+        guard result.count != 0 else {
+            return []
+        }
+        
+        var games = [Game]()
+        
+        for i in 0..<result.count {
+            games.append(result[i])
+        }
+        
+        return games.filter { game in
+            game.salePrice != "" && isFavorite(favorite: Favorite(game.id))
+        }
     }
 }

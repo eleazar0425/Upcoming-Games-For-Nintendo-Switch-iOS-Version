@@ -108,7 +108,9 @@ class GameDetailViewController: UIViewController {
         playerViewController.view.frame = self.videoPlayerView.frame
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.videoPlayerView.frame.width, height: self.videoPlayerView.frame.height))
-        imageView.setImage(withPath: thumbnail!)
+        if let thumbnail = thumbnail {
+            imageView.setImage(withPath: thumbnail)
+        }
         imageView.contentMode = .scaleAspectFit
         
         playerViewController.contentOverlayView?.addSubview(imageView)

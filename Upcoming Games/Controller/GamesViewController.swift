@@ -59,11 +59,9 @@ class GamesViewController: UIViewController {
             }) else { return }
             let game = self.games[index]
             if event.isFavorite {
-                LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
-                Messaging.messaging().subscribe(toTopic: "/topics/"+game.id)
+                self.presenter.saveFavorite(game: game)
             }else {
-                LocalNotificationUtil.removePendingNotifications(to: game)
-                Messaging.messaging().unsubscribe(fromTopic: "/topics/"+game.id)
+                self.presenter.deleteFavorite(game: game)
             }
             self.tableView.reloadRows(at: [IndexPath(row: index, section: 0)], with: .automatic)
         }
@@ -251,17 +249,11 @@ extension GamesViewController: ToggleFavoriteDelegate {
         let game = games[index.row]
         var message = ""
         if isFavorite {
-            presenter.saveFavorite(id: game.id)
+            presenter.saveFavorite(game: game)
             message = "\(game.title) has been added to favorites"
-            LocalNotificationUtil.scheduleNotification(for: game, notificationType: .releasedGame)
-            //Subscribe to firebase for discounts
-            Messaging.messaging().subscribe(toTopic: "/topics/"+game.id)
         }else{
-            presenter.deleteFavorite(id: game.id)
+            presenter.deleteFavorite(game: game)
             message = "\(game.title) has been removed from favorites"
-            LocalNotificationUtil.removePendingNotifications(to: game)
-            //Unsuscribe from firebase
-            Messaging.messaging().unsubscribe(fromTopic: "/topics/"+game.id)
         }
         SwiftEventBus.post("favoritesUpdate", sender: FavoriteEvent(game: game, isFavorite: isFavorite))
         self.view.makeToast(message)

@@ -1,15 +1,15 @@
 //
-//  Favorite.swift
+//  Suscription.swift
 //  Switch Library Widget
 //
-//  Created by Eleazar Estrella GB on 3/8/19.
+//  Created by Eleazar Estrella GB on 3/11/19.
 //  Copyright © 2019 Eleazar Estrella. All rights reserved.
 //
 
 import Foundation
 import RealmSwift
 
-class Favorite : Object {
+class Suscription: Object {
     @objc dynamic var id: String = ""
     
     override class func primaryKey() -> String {
