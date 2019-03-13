@@ -104,9 +104,11 @@ extension NotificationViewController: UITableViewDataSource, UITableViewDelegate
 
 extension NotificationViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        guard let indexPath = tableView.indexPathForRow(at: location),
+            let cell = tableView.cellForRow(at: indexPath) else { return nil }
         let viewController = storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as! GameDetailViewController
         viewController.game = self.notifications[indexPath.row].game
+        previewingContext.sourceRect = cell.frame
         return viewController
     }
     

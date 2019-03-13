@@ -47,6 +47,8 @@ extension NotificationSettingsViewController: UITableViewDataSource, UITableView
         viewCell.boxArt.setImage(withPath: game.boxArt)
         viewCell.gameTitle.text = game.title
         viewCell.suscriptionSwitch.isOn = presenter.isSuscribed(game: game)
+        viewCell.row = indexPath.row
+        viewCell.delegate = self
         return viewCell
     }
     
@@ -58,6 +60,17 @@ extension NotificationSettingsViewController: UITableViewDataSource, UITableView
         if newSeleccion {
             presenter.suscribe(game: game)
         }else {
+            presenter.unsuscribe(game: game)
+        }
+    }
+}
+
+extension NotificationSettingsViewController: SwitchChangedDelegate {
+    func changeStateTo(isOn: Bool, row: Int) {
+        let game = self.games[row]
+        if isOn {
+            presenter.suscribe(game: game)
+        }else{
             presenter.unsuscribe(game: game)
         }
     }
