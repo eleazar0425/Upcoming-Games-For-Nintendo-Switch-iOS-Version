@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftEventBus
 
 class NotificationSettingsViewController: UIViewController {
 
@@ -17,6 +18,11 @@ class NotificationSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SwiftEventBus.onMainThread(self, name: "favoritesUpdate") { result in
+            self.presenter.getGames()
+        }
+        
         presenter.getGames()
         tableView.delegate = self
         tableView.dataSource = self
@@ -26,6 +32,7 @@ class NotificationSettingsViewController: UIViewController {
 extension NotificationSettingsViewController: NotificationSettingsView {
     func setGames(games: [Game]?, error: Error?) {
         guard let games = games else { return }
+        self.games.removeAll()
         self.games += games
         self.tableView.reloadData()
     }

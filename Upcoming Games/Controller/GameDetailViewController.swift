@@ -29,6 +29,9 @@ class GameDetailViewController: UIViewController {
     var game: Game!
     var presenter: GameDetailPresenter!
     let impact = UIImpactFeedbackGenerator()
+    var player: AVPlayer!
+    var subView: UIImageView!
+    var playerViewController = AVPlayerViewController()
     
     @objc let favoriteToggle = UIButton(type: .custom)
     
@@ -104,7 +107,7 @@ class GameDetailViewController: UIViewController {
     }
     
     func playVideo(videoIdentifier: String?, thumbnail: String?) {
-        let playerViewController = AVPlayerViewController()
+        
         playerViewController.view.frame = self.videoPlayerView.frame
         
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.videoPlayerView.frame.width, height: self.videoPlayerView.frame.height))
@@ -113,16 +116,43 @@ class GameDetailViewController: UIViewController {
         }
         imageView.contentMode = .scaleAspectFit
         
+        subView = imageView
+        
         playerViewController.contentOverlayView?.addSubview(imageView)
         
         self.addChild(playerViewController)
         self.view.addSubview(playerViewController.view)
         XCDYouTubeClient.default().getVideoWithIdentifier(videoIdentifier) { [unowned playerViewController] (video: XCDYouTubeVideo?, error: Error?) in
             if let streamURLs = video?.streamURLs, let streamURL = (streamURLs[XCDYouTubeVideoQualityHTTPLiveStreaming] ?? streamURLs[YouTubeVideoQuality.hd720] ?? streamURLs[YouTubeVideoQuality.medium360] ?? streamURLs[YouTubeVideoQuality.small240]) {
-                playerViewController.player = AVPlayer(url: streamURL)
+                self.player =  AVPlayer(url: streamURL)
+                self.player.addObserver(self, forKeyPath: "rate", options: NSKeyValueObservingOptions.new, context: nil)
+                playerViewController.player = self.player
             }
         }
     }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "rate" {
+            if player.rate > 0 {
+                playerViewController.contentOverlayView?.willRemoveSubview(subView)
+                subView.removeFromSuperview()
+            }
+        }
+    }
+    
+    override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.viewWillTransition(to: size, with: coordinator)
+        coordinator.animate(alongsideTransition: { (context) in
+        }) { (context) in
+            //self.videoPlayerView.frame.size = size
+            self.playerViewController.view.frame = self.videoPlayerView.frame
+            self.subView.frame = CGRect(x: 0, y: 0, width: self.videoPlayerView.frame.width, height: self.videoPlayerView.frame.height)
+        }
+    }
+}
+
+extension GameDetailViewController: AVPlayerViewControllerDelegate {
+    
 }
 
 extension GameDetailViewController: GameDetailView {

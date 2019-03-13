@@ -402,6 +402,8 @@ extension GamesViewController: UIViewControllerPreviewingDelegate {
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        navigationController?.pushViewController(viewControllerToCommit, animated: true)
+        let viewController = storyboard?.instantiateViewController(withIdentifier: "gameDetailViewController") as! GameDetailViewController
+        viewController.game = (viewControllerToCommit as! GameDetailViewController).game
+        navigationController?.pushViewController(viewController, animated: true)
     }
 }
