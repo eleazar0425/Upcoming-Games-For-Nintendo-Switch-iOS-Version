@@ -68,6 +68,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if let scheme = url.scheme,
+            scheme.localizedCaseInsensitiveCompare("com.switchlibrary") == .orderedSame,
+            let view = url.host {
+            
+            var parameters: [String: String] = [:]
+            URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+                parameters[$0.name] = $0.value
+            }
+            
+            redirect(view: view, params: parameters)
+            
+        }
+        return true
+    }
+    
+    func redirect(view: String, params: [String: String]){
+        if view == "gameDetail"{
+            let gameId = params["id"]
+            let interactor = SwinjectStoryboard.defaultContainer.resolve(GameLocalDataManager.self)!
+            let game = interactor.getGames()?.first {$0.id == gameId}
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let rootViewcontroller = mainStoryboard.instantiateViewController(withIdentifier: "mainViewController") as! UITabBarController
+            let viewControllers = rootViewcontroller.viewControllers
+            let navigationController = viewControllers?[0] as! UINavigationController
+            let gameDetailViewController = mainStoryboard.instantiateViewController(withIdentifier: "gameDetailViewController") as! GameDetailViewController
+            gameDetailViewController.game = game
+            navigationController.pushViewController(gameDetailViewController, animated: false)
+            self.window?.rootViewController = rootViewcontroller
+        }
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().subscribe(toTopic: "/topics/all")
     }
@@ -86,18 +118,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        //let userInfo = response.notification.request.content.userInfo
+        let userInfo = response.notification.request.content.userInfo
+        guard let gameId = userInfo["gameId"] as? String else { return }
     }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        
-        guard let gameObject = userInfo["game"] as? String, let notificationType = userInfo["notificationType"] as? String else { return }
-        
-        let game = Game(withJSON: JSON(gameObject.data(using: .utf8)!))
-        
-        LocalNotificationUtil.scheduleNotification(for: game, notificationType: GameNotificationType(rawValue: notificationType)!)
-    }
-    
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         Messaging.messaging().subscribe(toTopic: "/topics/all")
     }

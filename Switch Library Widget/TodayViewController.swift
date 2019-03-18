@@ -58,6 +58,8 @@ extension TodayViewController: UICollectionViewDelegate, UICollectionViewDataSou
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         //redirect
+        let game = games[indexPath.item]
+        extensionContext?.open(URL(string: "com.switchlibrary://gameDetail?id="+game.id)!, completionHandler: nil)
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
