@@ -104,11 +104,13 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnc-aI-LSW">
-                    <rect key="frame" x="339" y="145" width="26" height="14.5"/>
+                    <rect key="frame" x="338" y="145" width="27" height="14.5"/>
                     <attributedString key="attributedText">
                         <fragment content="$0.0">
                             <attributes>
-                                <font key="NSFont" metaFont="cellTitle"/>
+                                <color key="NSColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                <font key="NSFont" size="12" name=".AppleSystemUIFontEmphasized"/>
+                                <font key="NSOriginalFont" size="12" name=".AppleSystemUIFontEmphasized"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>
@@ -123,7 +125,8 @@
                     <attributedString key="attributedText">
                         <fragment content="Name">
                             <attributes>
-                                <font key="NSFont" metaFont="system" size="14"/>
+                                <font key="NSFont" size="14" name=".AppleSystemUIFontEmphasized"/>
+                                <font key="NSOriginalFont" size="14" name=".AppleSystemUIFontEmphasized"/>
                                 <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                             </attributes>
                         </fragment>

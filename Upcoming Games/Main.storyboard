@@ -134,19 +134,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="edS-sT-AHI">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="64" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="edS-sT-AHI">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotificationCellIdentifier" id="z1q-wv-yxh" customClass="NotificationTableViewCell" customModule="Switch_Library" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="28" width="375" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z1q-wv-yxh" id="G8l-nH-zmo">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="z1q-wv-yxh" id="G8l-nH-zmo">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="63.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cdN-8F-fDC">
-                                                    <rect key="frame" x="5" y="0.0" width="60" height="60.5"/>
+                                                    <rect key="frame" x="5" y="2.5" width="60" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="60" id="6Fl-Jv-kza"/>
                                                         <constraint firstAttribute="height" constant="60" id="WVp-oc-hlg"/>
@@ -163,10 +163,10 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cdN-8F-fDC" firstAttribute="top" secondItem="G8l-nH-zmo" secondAttribute="top" id="12V-uX-HLb"/>
+                                                <constraint firstItem="cdN-8F-fDC" firstAttribute="top" secondItem="G8l-nH-zmo" secondAttribute="top" constant="2" id="12V-uX-HLb"/>
                                                 <constraint firstAttribute="bottom" secondItem="XHo-77-hwC" secondAttribute="bottom" id="3ns-6g-zh0"/>
                                                 <constraint firstItem="XHo-77-hwC" firstAttribute="top" secondItem="G8l-nH-zmo" secondAttribute="top" id="9pN-qI-a3t"/>
-                                                <constraint firstAttribute="bottom" secondItem="cdN-8F-fDC" secondAttribute="bottom" id="Lhn-dV-2RX"/>
+                                                <constraint firstAttribute="bottom" secondItem="cdN-8F-fDC" secondAttribute="bottom" constant="2" id="Lhn-dV-2RX"/>
                                                 <constraint firstItem="XHo-77-hwC" firstAttribute="leading" secondItem="cdN-8F-fDC" secondAttribute="trailing" constant="5" id="R5n-dZ-Xaa"/>
                                                 <constraint firstItem="cdN-8F-fDC" firstAttribute="leading" secondItem="G8l-nH-zmo" secondAttribute="leading" constant="5" id="SL8-co-d70"/>
                                                 <constraint firstAttribute="trailing" secondItem="XHo-77-hwC" secondAttribute="trailing" constant="5" id="WaE-9o-Rs4"/>
@@ -691,12 +691,12 @@
         </scene>
     </scenes>
     <resources>
-        <image name="filterIcon" width="27" height="27"/>
+        <image name="filterIcon" width="48" height="48"/>
         <image name="gamesIcon" width="48" height="48"/>
         <image name="notificationIcon" width="48" height="48"/>
         <image name="searchIcon" width="48" height="48"/>
         <image name="settingsIcon" width="48" height="48"/>
-        <image name="sortIcon" width="24" height="24"/>
+        <image name="sortIcon" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xpY-Ky-fpZ"/>
