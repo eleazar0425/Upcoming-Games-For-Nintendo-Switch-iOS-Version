@@ -22,6 +22,11 @@ target 'Switch Library' do
   pod 'Presentr'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  
+  target 'Switch Library Tests' do
+      inherit! :search_paths
+      pod 'Firebase'
+  end
 end
 
 target 'Switch Library Widget' do
@@ -30,4 +35,7 @@ target 'Switch Library Widget' do
     pod 'AlamofireImage'
     pod 'RealmSwift'
     pod 'SwiftyJSON'
+    
 end
+
+

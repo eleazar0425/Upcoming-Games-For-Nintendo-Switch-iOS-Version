@@ -2,6 +2,8 @@ PODS:
   - Alamofire (4.8.0)
   - AlamofireImage (3.5.0):
     - Alamofire (~> 4.8)
+  - Firebase (5.14.0):
+    - Firebase/Core (= 5.14.0)
   - Firebase/Core (5.14.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.4.0)
@@ -86,6 +88,7 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - AlamofireImage
+  - Firebase
   - Firebase/Core
   - Firebase/Messaging
   - HGPlaceholders
@@ -156,6 +159,6 @@ SPEC CHECKSUMS:
   XCDYouTubeKit: c8567fd5cb388a3099fa26eee4b30df2a467847d
   YouTubePlayer: 028451f6772f372d4759866db99824c676ac1473
 
-PODFILE CHECKSUM: b5fa816115d6118ee65d2df03b443593d2b7b441
+PODFILE CHECKSUM: 7813c67e129ee1d731a231f03eacc252b81612fc
 
 COCOAPODS: 1.5.3

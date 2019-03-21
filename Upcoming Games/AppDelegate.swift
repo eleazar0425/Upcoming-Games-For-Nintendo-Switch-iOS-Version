@@ -120,7 +120,16 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         let userInfo = response.notification.request.content.userInfo
         guard let gameId = userInfo["gameId"] as? String else { return }
+        //Avoid redirecting still
+        //redirect(view: "gameDetail", params: ["id" : gameId])
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        
+        //guard let gameId = userInfo["gameId"] as? String else { return }
+    }
+    
+    
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         Messaging.messaging().subscribe(toTopic: "/topics/all")
     }

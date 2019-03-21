@@ -10,7 +10,7 @@ import Foundation
 import SwiftyJSON
 import RealmSwift
 
-class Game : Object, Codable {
+open class Game : Object, Codable {
     @objc dynamic var id: String = ""
     @objc dynamic var title: String = ""
     @objc dynamic var releaseDate: String = ""
@@ -70,7 +70,7 @@ class Game : Object, Codable {
         self.id = id
     }
     
-    override class func primaryKey() -> String {
+    override open class func primaryKey() -> String {
         return "id"
     }
     

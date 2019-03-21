@@ -16,7 +16,6 @@
 		1024EF022232F80C0036F0C9 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF012232F80C0036F0C9 /* TodayViewController.swift */; };
 		1024EF052232F80C0036F0C9 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1024EF032232F80C0036F0C9 /* MainInterface.storyboard */; };
 		1024EF092232F80C0036F0C9 /* Switch Library Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1024EEFD2232F80C0036F0C9 /* Switch Library Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		1024EF0E2232F8450036F0C9 /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */; };
 		1024EF102232FBE80036F0C9 /* DiscountWidgetCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF0F2232FBE80036F0C9 /* DiscountWidgetCollectionViewCell.swift */; };
 		1024EF1E22370A420036F0C9 /* NotificationSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF1A223701A00036F0C9 /* NotificationSettingsViewController.swift */; };
 		1024EF1F22370A460036F0C9 /* NotificationSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1024EF1C223701C60036F0C9 /* NotificationSettingTableViewCell.swift */; };
@@ -39,8 +38,9 @@
 		1078291522284163000F381A /* CurrencyPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1078291422284163000F381A /* CurrencyPickerViewController.swift */; };
 		107829172228571B000F381A /* Double+Round.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107829162228571B000F381A /* Double+Round.swift */; };
 		10782942222DB8E8000F381A /* YoutubeVideoQuality.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10782941222DB8E8000F381A /* YoutubeVideoQuality.swift */; };
-		10782944222EAF33000F381A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10782943222EAF33000F381A /* GoogleService-Info.plist */; };
+		108B1E382244349D00BB2309 /* Switch_Library_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108B1E372244349D00BB2309 /* Switch_Library_Tests.swift */; };
 		10A06CBB21F3556600AD59C7 /* GameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */; };
+		10A14464224042D500D10E02 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10782943222EAF33000F381A /* GoogleService-Info.plist */; };
 		10B1A4B221F7713500D9AF59 /* YoutubeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B121F7713500D9AF59 /* YoutubeService.swift */; };
 		10B1A4B421F771B900D9AF59 /* YoutubeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */; };
 		10B1A4B721F775FE00D9AF59 /* GameDetailContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10B1A4B621F775FE00D9AF59 /* GameDetailContract.swift */; };
@@ -71,8 +71,9 @@
 		20A144B31F1CF285005CCDC7 /* GameLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */; };
 		20A144B51F1CF2F3005CCDC7 /* GameRemoteDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B41F1CF2F3005CCDC7 /* GameRemoteDataManager.swift */; };
 		20A144B71F1CF546005CCDC7 /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20A144B61F1CF546005CCDC7 /* GameService.swift */; };
-		2C26CBF3F255B1FE56712F3D /* Pods_Switch_Library_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 676B53A40BE303CFF6983459 /* Pods_Switch_Library_Widget.framework */; };
-		55F610CB8BA2CB6CE5242A28 /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */; };
+		5C71C3EED9CBF032C1E5797F /* Pods_Switch_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A85B3D1AE97C08B9F62B003 /* Pods_Switch_Library.framework */; };
+		8E95CEE77032C7E882B24BC3 /* Pods_Switch_Library_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 154A6C205B01C11BC34C7E92 /* Pods_Switch_Library_Widget.framework */; };
+		97C2E4B71C2D13CC330A55EE /* Pods_Switch_Library_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE76AC9F65139C64725C065 /* Pods_Switch_Library_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 1024EEFC2232F80C0036F0C9;
 			remoteInfo = "Switch Library Widget";
+		};
+		108B1E3A2244349D00BB2309 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20A1446B1F190D6F005CCDC7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 20A144721F190D6F005CCDC7;
+			remoteInfo = "Switch Library";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -100,6 +108,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0A85B3D1AE97C08B9F62B003 /* Pods_Switch_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switch_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BE76AC9F65139C64725C065 /* Pods_Switch_Library_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switch_Library_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		10014FC121EFB5E4000FE29C /* GameViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameViewCell.xib; sourceTree = "<group>"; };
 		1002803B2201E2BB00AB95AD /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		1002803E2201E8D600AB95AD /* GamesEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesEvent.swift; sourceTree = "<group>"; };
@@ -129,6 +139,9 @@
 		107829162228571B000F381A /* Double+Round.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Round.swift"; sourceTree = "<group>"; };
 		10782941222DB8E8000F381A /* YoutubeVideoQuality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeVideoQuality.swift; sourceTree = "<group>"; };
 		10782943222EAF33000F381A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		108B1E352244349C00BB2309 /* Switch Library Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Switch Library Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		108B1E372244349D00BB2309 /* Switch_Library_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switch_Library_Tests.swift; sourceTree = "<group>"; };
+		108B1E392244349D00BB2309 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10A06CBA21F3556600AD59C7 /* GameDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailViewController.swift; sourceTree = "<group>"; };
 		10B1A4B121F7713500D9AF59 /* YoutubeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeService.swift; sourceTree = "<group>"; };
 		10B1A4B321F771B900D9AF59 /* YoutubeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoutubeRouter.swift; sourceTree = "<group>"; };
@@ -136,7 +149,7 @@
 		10B1A4BA21F78D3300D9AF59 /* IGDBRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBRouter.swift; sourceTree = "<group>"; };
 		10B1A4BC21F78FB000D9AF59 /* IGDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IGDBService.swift; sourceTree = "<group>"; };
 		10C2495F21FA0DAC0039EF19 /* Switch-Library-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Switch-Library-Bridging-Header.h"; sourceTree = "<group>"; };
-		1991C35B05DFE51F10FAEF49 /* Pods-Switch Library Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library Widget/Pods-Switch Library Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		154A6C205B01C11BC34C7E92 /* Pods_Switch_Library_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switch_Library_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		202D9E2A1F1D562E00B1E06E /* GameListContract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListContract.swift; sourceTree = "<group>"; };
 		202D9E2C1F1E34F400B1E06E /* SwinjectSetup+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwinjectSetup+Storyboard.swift"; sourceTree = "<group>"; };
 		202D9E2F1F20DF7F00B1E06E /* DateUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtil.swift; sourceTree = "<group>"; };
@@ -164,14 +177,12 @@
 		20A144B21F1CF285005CCDC7 /* GameLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameLocalDataManager.swift; sourceTree = "<group>"; };
 		20A144B41F1CF2F3005CCDC7 /* GameRemoteDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameRemoteDataManager.swift; sourceTree = "<group>"; };
 		20A144B61F1CF546005CCDC7 /* GameService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
-		30CA0B8F2636449DB6120AC0 /* Pods-Switch Library Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library Widget/Pods-Switch Library Widget.release.xcconfig"; sourceTree = "<group>"; };
-		31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library.release.xcconfig"; sourceTree = "<group>"; };
-		5B328F327ADA25FCE1CE43E9 /* Pods-Upcoming Games.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Upcoming Games.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Upcoming Games/Pods-Upcoming Games.debug.xcconfig"; sourceTree = "<group>"; };
-		676B53A40BE303CFF6983459 /* Pods_Switch_Library_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switch_Library_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Upcoming_Games.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Switch_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE214D239BBEDFFE63A674B2 /* Pods-Upcoming Games.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Upcoming Games.release.xcconfig"; path = "Pods/Target Support Files/Pods-Upcoming Games/Pods-Upcoming Games.release.xcconfig"; sourceTree = "<group>"; };
-		F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library.debug.xcconfig"; sourceTree = "<group>"; };
+		6069376AB0FDAA9AB410D575 /* Pods-Switch Library Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library Widget/Pods-Switch Library Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		958B8F834BB96B2B1FEE4BD8 /* Pods-Switch Library Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library Tests/Pods-Switch Library Tests.release.xcconfig"; sourceTree = "<group>"; };
+		974D2AA9385D40A61B115FC5 /* Pods-Switch Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library.release.xcconfig"; sourceTree = "<group>"; };
+		C66094DE19EEB349E81F2D2C /* Pods-Switch Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library.debug.xcconfig"; sourceTree = "<group>"; };
+		C9674738C4007893D29AF528 /* Pods-Switch Library Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library Widget/Pods-Switch Library Widget.release.xcconfig"; sourceTree = "<group>"; };
+		DA385A5220CE69C31C56BF70 /* Pods-Switch Library Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Switch Library Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Switch Library Tests/Pods-Switch Library Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,9 +193,16 @@
 				1024EF292237E8960036F0C9 /* RealmSwift.framework in Frameworks */,
 				1024EF2B2237E8960036F0C9 /* RealmSwift.framework in Frameworks */,
 				1024EF2D2237E8960036F0C9 /* SwiftyJSON.framework in Frameworks */,
-				1024EF0E2232F8450036F0C9 /* Pods_Switch_Library.framework in Frameworks */,
 				1024EEFF2232F80C0036F0C9 /* NotificationCenter.framework in Frameworks */,
-				2C26CBF3F255B1FE56712F3D /* Pods_Switch_Library_Widget.framework in Frameworks */,
+				8E95CEE77032C7E882B24BC3 /* Pods_Switch_Library_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		108B1E322244349C00BB2309 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97C2E4B71C2D13CC330A55EE /* Pods_Switch_Library_Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,7 +210,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55F610CB8BA2CB6CE5242A28 /* Pods_Switch_Library.framework in Frameworks */,
+				5C71C3EED9CBF032C1E5797F /* Pods_Switch_Library.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +274,15 @@
 			path = Notifications;
 			sourceTree = "<group>";
 		};
+		108B1E362244349D00BB2309 /* Switch Library Tests */ = {
+			isa = PBXGroup;
+			children = (
+				108B1E372244349D00BB2309 /* Switch_Library_Tests.swift */,
+				108B1E392244349D00BB2309 /* Info.plist */,
+			);
+			path = "Switch Library Tests";
+			sourceTree = "<group>";
+		};
 		10B1A4B521F775F000D9AF59 /* GameDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,9 +327,10 @@
 				100280432202260700AB95AD /* Switch Library.entitlements */,
 				20A144751F190D6F005CCDC7 /* Upcoming Games */,
 				1024EF002232F80C0036F0C9 /* Switch Library Widget */,
+				108B1E362244349D00BB2309 /* Switch Library Tests */,
 				20A144741F190D6F005CCDC7 /* Products */,
-				53599F68C28E1DBEF76046BD /* Pods */,
 				D6147E0777DA3484AC86B86B /* Frameworks */,
+				39A51A51F8FF3E5367B6597F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -311,6 +339,7 @@
 			children = (
 				20A144731F190D6F005CCDC7 /* Switch Library.app */,
 				1024EEFD2232F80C0036F0C9 /* Switch Library Widget.appex */,
+				108B1E352244349C00BB2309 /* Switch Library Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -450,15 +479,15 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
-		53599F68C28E1DBEF76046BD /* Pods */ = {
+		39A51A51F8FF3E5367B6597F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5B328F327ADA25FCE1CE43E9 /* Pods-Upcoming Games.debug.xcconfig */,
-				AE214D239BBEDFFE63A674B2 /* Pods-Upcoming Games.release.xcconfig */,
-				F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */,
-				31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */,
-				1991C35B05DFE51F10FAEF49 /* Pods-Switch Library Widget.debug.xcconfig */,
-				30CA0B8F2636449DB6120AC0 /* Pods-Switch Library Widget.release.xcconfig */,
+				C66094DE19EEB349E81F2D2C /* Pods-Switch Library.debug.xcconfig */,
+				974D2AA9385D40A61B115FC5 /* Pods-Switch Library.release.xcconfig */,
+				6069376AB0FDAA9AB410D575 /* Pods-Switch Library Widget.debug.xcconfig */,
+				C9674738C4007893D29AF528 /* Pods-Switch Library Widget.release.xcconfig */,
+				DA385A5220CE69C31C56BF70 /* Pods-Switch Library Tests.debug.xcconfig */,
+				958B8F834BB96B2B1FEE4BD8 /* Pods-Switch Library Tests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -469,10 +498,10 @@
 				1024EF282237E8960036F0C9 /* RealmSwift.framework */,
 				1024EF2A2237E8960036F0C9 /* RealmSwift.framework */,
 				1024EF2C2237E8960036F0C9 /* SwiftyJSON.framework */,
-				706E34E177ED4A7517AC00D5 /* Pods_Upcoming_Games.framework */,
-				93AD98F8753666DFDF718BB8 /* Pods_Switch_Library.framework */,
 				1024EEFE2232F80C0036F0C9 /* NotificationCenter.framework */,
-				676B53A40BE303CFF6983459 /* Pods_Switch_Library_Widget.framework */,
+				0A85B3D1AE97C08B9F62B003 /* Pods_Switch_Library.framework */,
+				154A6C205B01C11BC34C7E92 /* Pods_Switch_Library_Widget.framework */,
+				0BE76AC9F65139C64725C065 /* Pods_Switch_Library_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -484,7 +513,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1024EF0A2232F80C0036F0C9 /* Build configuration list for PBXNativeTarget "Switch Library Widget" */;
 			buildPhases = (
-				E2BB4D246608C16E1EF5DDA7 /* [CP] Check Pods Manifest.lock */,
+				340E55443E69EB820475EC9D /* [CP] Check Pods Manifest.lock */,
 				1024EEF92232F80C0036F0C9 /* Sources */,
 				1024EEFA2232F80C0036F0C9 /* Frameworks */,
 				1024EEFB2232F80C0036F0C9 /* Resources */,
@@ -498,16 +527,36 @@
 			productReference = 1024EEFD2232F80C0036F0C9 /* Switch Library Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		108B1E342244349C00BB2309 /* Switch Library Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 108B1E3E2244349D00BB2309 /* Build configuration list for PBXNativeTarget "Switch Library Tests" */;
+			buildPhases = (
+				A470FB1FB6A26E33CBA73B00 /* [CP] Check Pods Manifest.lock */,
+				108B1E312244349C00BB2309 /* Sources */,
+				108B1E322244349C00BB2309 /* Frameworks */,
+				108B1E332244349C00BB2309 /* Resources */,
+				90B188D42CA2D88F94BC24A6 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				108B1E3B2244349D00BB2309 /* PBXTargetDependency */,
+			);
+			name = "Switch Library Tests";
+			productName = "Switch Library Tests";
+			productReference = 108B1E352244349C00BB2309 /* Switch Library Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		20A144721F190D6F005CCDC7 /* Switch Library */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 20A144851F190D6F005CCDC7 /* Build configuration list for PBXNativeTarget "Switch Library" */;
 			buildPhases = (
-				8E728778A16F05CEDA637AA5 /* [CP] Check Pods Manifest.lock */,
+				B353CDDB3FD994C4DB986AC5 /* [CP] Check Pods Manifest.lock */,
 				20A1446F1F190D6F005CCDC7 /* Sources */,
 				20A144701F190D6F005CCDC7 /* Frameworks */,
 				20A144711F190D6F005CCDC7 /* Resources */,
-				C54224C79C0422418DE5BABE /* [CP] Embed Pods Frameworks */,
 				1024EF0D2232F80C0036F0C9 /* Embed App Extensions */,
+				5923206420200261A78BF635 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -525,6 +574,7 @@
 		20A1446B1F190D6F005CCDC7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Eleazar Estrella";
@@ -538,6 +588,12 @@
 								enabled = 1;
 							};
 						};
+					};
+					108B1E342244349C00BB2309 = {
+						CreatedOnToolsVersion = 10.1;
+						DevelopmentTeam = AUW9773P92;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 20A144721F190D6F005CCDC7;
 					};
 					20A144721F190D6F005CCDC7 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -579,6 +635,7 @@
 			targets = (
 				20A144721F190D6F005CCDC7 /* Switch Library */,
 				1024EEFC2232F80C0036F0C9 /* Switch Library Widget */,
+				108B1E342244349C00BB2309 /* Switch Library Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -592,12 +649,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		108B1E332244349C00BB2309 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		20A144711F190D6F005CCDC7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10A14464224042D500D10E02 /* GoogleService-Info.plist in Resources */,
 				10014FC221EFB5E5000FE29C /* GameViewCell.xib in Resources */,
-				10782944222EAF33000F381A /* GoogleService-Info.plist in Resources */,
 				20A144891F190DD9005CCDC7 /* Main.storyboard in Resources */,
 				20A1447E1F190D6F005CCDC7 /* Assets.xcassets in Resources */,
 			);
@@ -606,42 +670,48 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8E728778A16F05CEDA637AA5 /* [CP] Check Pods Manifest.lock */ = {
+		340E55443E69EB820475EC9D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			inputFileListPaths = (
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Switch Library-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Switch Library Widget-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C54224C79C0422418DE5BABE /* [CP] Embed Pods Frameworks */ = {
+		5923206420200261A78BF635 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS11.0/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS11.0/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/HGPlaceholders/HGPlaceholders.framework",
 				"${BUILT_PRODUCTS_DIR}/Presentr/Presentr.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-iOS11.0/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS11.0/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftEventBus/SwiftEventBus.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS11.0/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/Swinject/Swinject.framework",
 				"${BUILT_PRODUCTS_DIR}/SwinjectStoryboard/SwinjectStoryboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Toast-Swift/Toast_Swift.framework",
@@ -649,13 +719,10 @@
 				"${BUILT_PRODUCTS_DIR}/XCDYouTubeKit/XCDYouTubeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/YouTubePlayer/YouTubePlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
-				"${BUILT_PRODUCTS_DIR}/Alamofire-iOS12.1/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/AlamofireImage-iOS12.1/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm-iOS12.1/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift-iOS12.1/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON-iOS12.1/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
@@ -681,7 +748,31 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switch Library/Pods-Switch Library-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E2BB4D246608C16E1EF5DDA7 /* [CP] Check Pods Manifest.lock */ = {
+		90B188D42CA2D88F94BC24A6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Switch Library Tests/Pods-Switch Library Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Switch Library Tests/Pods-Switch Library Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A470FB1FB6A26E33CBA73B00 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -696,7 +787,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Switch Library Widget-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Switch Library Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B353CDDB3FD994C4DB986AC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Switch Library-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -718,6 +831,14 @@
 				1024EF272237E86C0036F0C9 /* Game.swift in Sources */,
 				1024EF2F2237E9840036F0C9 /* Suscription.swift in Sources */,
 				1024EF302237E9B80036F0C9 /* CurrencySettings.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		108B1E312244349C00BB2309 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				108B1E382244349D00BB2309 /* Switch_Library_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -781,6 +902,11 @@
 			target = 1024EEFC2232F80C0036F0C9 /* Switch Library Widget */;
 			targetProxy = 1024EF072232F80C0036F0C9 /* PBXContainerItemProxy */;
 		};
+		108B1E3B2244349D00BB2309 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 20A144721F190D6F005CCDC7 /* Switch Library */;
+			targetProxy = 108B1E3A2244349D00BB2309 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -797,7 +923,7 @@
 /* Begin XCBuildConfiguration section */
 		1024EF0B2232F80C0036F0C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1991C35B05DFE51F10FAEF49 /* Pods-Switch Library Widget.debug.xcconfig */;
+			baseConfigurationReference = 6069376AB0FDAA9AB410D575 /* Pods-Switch Library Widget.debug.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -808,6 +934,7 @@
 				DEVELOPMENT_TEAM = AUW9773P92;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Switch Library Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -821,7 +948,7 @@
 		};
 		1024EF0C2232F80C0036F0C9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 30CA0B8F2636449DB6120AC0 /* Pods-Switch Library Widget.release.xcconfig */;
+			baseConfigurationReference = C9674738C4007893D29AF528 /* Pods-Switch Library Widget.release.xcconfig */;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -832,6 +959,7 @@
 				DEVELOPMENT_TEAM = AUW9773P92;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Switch Library Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Upcoming-Games.Switch-Library-Widget";
@@ -839,6 +967,53 @@
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		108B1E3C2244349D00BB2309 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA385A5220CE69C31C56BF70 /* Pods-Switch Library Tests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AUW9773P92;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Switch Library Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Switch-Library-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Switch Library.app/Switch Library";
+			};
+			name = Debug;
+		};
+		108B1E3D2244349D00BB2309 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 958B8F834BB96B2B1FEE4BD8 /* Pods-Switch Library Tests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AUW9773P92;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = "Switch Library Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "eleazar0425.Switch-Library-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Switch Library.app/Switch Library";
 			};
 			name = Release;
 		};
@@ -955,7 +1130,7 @@
 		};
 		20A144861F190D6F005CCDC7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F3EF1B72BE751DF4BD1ED378 /* Pods-Switch Library.debug.xcconfig */;
+			baseConfigurationReference = C66094DE19EEB349E81F2D2C /* Pods-Switch Library.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -975,7 +1150,7 @@
 		};
 		20A144871F190D6F005CCDC7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31007DE6C0827819E4CA261C /* Pods-Switch Library.release.xcconfig */;
+			baseConfigurationReference = 974D2AA9385D40A61B115FC5 /* Pods-Switch Library.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1001,6 +1176,15 @@
 			buildConfigurations = (
 				1024EF0B2232F80C0036F0C9 /* Debug */,
 				1024EF0C2232F80C0036F0C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		108B1E3E2244349D00BB2309 /* Build configuration list for PBXNativeTarget "Switch Library Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				108B1E3C2244349D00BB2309 /* Debug */,
+				108B1E3D2244349D00BB2309 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
